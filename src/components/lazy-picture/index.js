@@ -31,13 +31,14 @@ class Component extends TemplateLite(HTMLElement) {
     setTimeout(() => {
       this._observer = new IntersectionObserver(this._boundActivateImage, options);
       this._observer.observe(this);
+
+      const sources = this.querySelectorAll('source');
+      const picture = this.shadowRoot.querySelector('picture');
+      for (let i = 0; i < sources.length; i++) {
+        const source = sources[i];
+        picture.appendChild(source.cloneNode(true));
+      }
     });
-    const sources = this.querySelectorAll('source');
-    const picture = this.shadowRoot.querySelector('picture');
-    for (let i = 0; i < sources.length; i++) {
-      const source = sources[i];
-      picture.appendChild(source.cloneNode(true));
-    }
   }
 
   disconnectedCallback () {
