@@ -1,0 +1,40 @@
+@import '../../styles/general/color.styl'
+@import '../../styles/general/typography.styl'
+
+:host
+  display block
+  padding 6px 0
+
+.banner-link
+  display flex
+  align-items center
+  max-width 600px
+  color $light
+  text-decoration none
+
+  .icon-container
+    width 2.25rem
+    padding-right 1rem
+    padding-top 12px
+
+    ::slotted(*)
+      fill $red-violet
+
+  .link-text
+    flex 1
+    product-sans()
+
+    .main-text
+      font-size 1.75rem
+      display block
+
+      @media screen and (max-width: 600px)
+        font-size 1.25rem
+
+    .sub-text
+      display block
+      font-size 1.25rem
+
+      @media screen and (max-width: 600px)
+        font-size 0.75rem
+

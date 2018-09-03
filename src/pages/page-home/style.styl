@@ -1,16 +1,32 @@
 @import '../../styles/general/typography.styl'
 @import '../../styles/general/color.styl'
+@import '../../styles/general/limit-width.styl'
+@import '../../styles/components/button.styl'
 
 :host
   display block
   min-height 100vh
-  background #fff
+  background $light
 
 .banner
   width 100%
   min-height 100vh
   position relative
   z-index 2
+
+  .banner-text
+    padding 18rem 2rem 0
+    limit-width()
+
+    @media screen and (max-width: 600px)
+      padding-top 8rem
+
+    .h1
+      font-size 3rem
+      max-width 40rem
+
+      @media screen and (max-width: 600px)
+        font-size 2rem
 
   .banner-gradient-container
     z-index -1
@@ -20,8 +36,8 @@
     top 0
     left 0
     right 0
-    background #36145d /* Old browsers */
-    background linear-gradient(to right, #36145d 0%,#ba00e0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background $dark-violet /* Old browsers */
+    background linear-gradient(to right, #36145d 0%,#ba00e0 100%);
     opacity 0.8
 
   .banner-image-container
@@ -38,3 +54,11 @@
     .banner-image
       width 100%
       flex 1
+
+h1-class($light)
+
+.banner-buttons
+  padding 3rem 0
+
+.button-outline
+  button-outline-base()

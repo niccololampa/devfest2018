@@ -7,10 +7,12 @@ button-base()
   text-decoration none
   text-align center
   cursor pointer
-  background $teal
+  background $dark-violet /* Old browsers */
+  background linear-gradient(to left, #3A63F5 0%,#ba00e0 100%)
   border none
-  padding 12px 24px
-  margin 12px 0
+  padding 0.5rem 2rem
+  margin 0.5rem 0
+  border-radius 3rem
   shadow(1)
 
   &::before
@@ -45,6 +47,19 @@ button-base()
   &[disabled]
     color $gray
     background $light
+
+  .button-icon
+    vertical-align middle
+    height 1.5rem
+    margin-bottom 3px
+    margin-right 6px
+    fill #fff
+    color #fff
+
+button-outline-base()
+  button-base()
+  background none
+  border 1px solid $light
 
 button-class()
   .button

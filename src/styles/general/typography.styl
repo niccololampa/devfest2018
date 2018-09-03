@@ -4,6 +4,9 @@ baseSize()
 roboto()
   font-family 'Roboto', sans-serif
 
+product-sans()
+  font-family 'Product Sans', sans-serif
+
 body-base(color)
   roboto()
   font-size 1rem
@@ -14,7 +17,7 @@ body-class(color)
     body-base(color)
 
 h1-base(color)
-  roboto()
+  product-sans()
   font-size 1.5625rem
   font-weight 400
   color color
@@ -24,7 +27,7 @@ h1-class(color)
     h1-base(color)
 
 h2-base(color)
-  roboto()
+  product-sans()
   font-size 1.25rem
   color color
 
@@ -33,7 +36,7 @@ h2-class(color)
     h2-base(color)
 
 h3-base(color)
-  roboto()
+  product-sans()
   font-size 1.125rem
   color color
 

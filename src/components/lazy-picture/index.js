@@ -14,7 +14,6 @@ class Component extends TemplateLite(HTMLElement) {
     super();
     this._boundImageLoaded = this._imageLoaded.bind(this);
     this._boundActivateImage = this._activateImage.bind(this);
-    this._thumbnail = '';
     this._thumbnailElement = document.createElement('img');
     this._src = '';
     this._imageElement = document.createElement('img');
@@ -125,11 +124,11 @@ class Component extends TemplateLite(HTMLElement) {
     if (this.shadowRoot) {
       const picture = this.shadowRoot.querySelector('picture');
       if (this._active) {
-        if (this._thumbnail && !this.shadowRoot.contains(this._thumbnailElement)) {
+        if (this.thumbnail && !this.shadowRoot.contains(this._thumbnailElement)) {
           this.shadowRoot.insertBefore(this._thumbnailElement, picture);
         }
         setTimeout(() => {
-          if (this._thumbnail) this._thumbnailElement.src = this._thumbnail;
+          if (this.thumbnail) this._thumbnailElement.src = this.thumbnail;
           if (this._src) this._imageElement.src = this._src;
           if (this._srcset) this._imageElement.srcset = this._srcset;
           if (picture && !picture.contains(this._imageElement)) setTimeout(() => { picture.appendChild(this._imageElement); });
