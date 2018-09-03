@@ -8,7 +8,10 @@ const template = (html, self) => function () {
         </svg>
       </button>
       <h1 class="title">
-        Element-Lite Starter Kit
+        <a href="/">
+          <lazy-picture class="logo" src="/assets/images/devfest-logo.png" alt="GDG Devfest 2018 Home">
+          </lazy-picture>
+        </a>
       </h1>
       <div class="spacer">
       </div>

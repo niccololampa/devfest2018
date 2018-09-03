@@ -96,7 +96,6 @@ class Component extends TemplateLite(HTMLElement) {
   }
 
   get alt () {
-    if (!this._alt) console.warn(`There's no alt text for this picture: ${this}`);
     return this._alt || '';
   }
 
