@@ -38,6 +38,70 @@ const template = html => html`
       </lazy-picture>
     </div>
   </header>
+
+  <section class="section overflow-top card white expect">
+    <h1 class="h1">
+      What to expect?
+    </h1>
+
+    <div class="grid">
+      <div class="cell">
+        <div class="icon-container">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M17,12V3A1,1 0 0,0 16,2H3A1,1 0 0,0 2,3V17L6,13H16A1,1 0 0,0 17,12M21,6H19V15H6V17A1,1 0 0,0 7,18H18L22,22V7A1,1 0 0,0 21,6Z" />
+          </svg>
+        </div>
+        <h2 class="h2">
+          Seamless Conference
+        </h2>
+        <p class="paragraph">
+          With a dedicated team assigned to develop applications that will digitized conference related activities (registration, acquisition of stubs, feedback forms) and improved gamified codelab apps.
+        </p>
+      </div>
+
+      <div class="cell">
+        <div class="icon-container">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M4,6H20V16H4M20,18A2,2 0 0,0 22,16V6C22,4.89 21.1,4 20,4H4C2.89,4 2,4.89 2,6V16A2,2 0 0,0 4,18H0V20H24V18H20Z" />
+          </svg>
+        </div>
+        <h2 class="h2">
+          Technical Talks and Workshops
+        </h2>
+        <p class="paragraph">
+          The conference will feature talks from distinguished invited speakers who will be sharing the latest in the fields of Mobile, Web, and Cloud Technologies.
+        </p>
+      </div>
+
+      <div class="cell">
+        <div class="icon-container">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M12,18H6V14H12M21,14V12L20,7H4L3,12V14H4V20H14V14H18V20H20V14M20,4H4V6H20V4Z" />
+          </svg>
+        </div>
+        <h2 class="h2">
+          Demo booth and Exhibit
+        </h2>
+        <p class="paragraph">
+          Booths will be in place to showcase devices that will let participants get a hands-on experience of the latest google technologies.
+        </p>
+      </div>
+
+      <div class="cell">
+        <div class="icon-container">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M12,6A3,3 0 0,0 9,9A3,3 0 0,0 12,12A3,3 0 0,0 15,9A3,3 0 0,0 12,6M6,8.17A2.5,2.5 0 0,0 3.5,10.67A2.5,2.5 0 0,0 6,13.17C6.88,13.17 7.65,12.71 8.09,12.03C7.42,11.18 7,10.15 7,9C7,8.8 7,8.6 7.04,8.4C6.72,8.25 6.37,8.17 6,8.17M18,8.17C17.63,8.17 17.28,8.25 16.96,8.4C17,8.6 17,8.8 17,9C17,10.15 16.58,11.18 15.91,12.03C16.35,12.71 17.12,13.17 18,13.17A2.5,2.5 0 0,0 20.5,10.67A2.5,2.5 0 0,0 18,8.17M12,14C10,14 6,15 6,17V19H18V17C18,15 14,14 12,14M4.67,14.97C3,15.26 1,16.04 1,17.33V19H4V17C4,16.22 4.29,15.53 4.67,14.97M19.33,14.97C19.71,15.53 20,16.22 20,17V19H23V17.33C23,16.04 21,15.26 19.33,14.97Z" />
+          </svg>
+        </div>
+        <h2 class="h2">
+          Party and Networking
+        </h2>
+        <p class="paragraph">
+          Participants will have the chance to indulge themselves with an after event gathering and celebration. Through this, they can experience great conversations and have the chance to increase their network.
+        </p>
+      </div>
+    </div>
+  </section>
 `;
 
 export { template };
