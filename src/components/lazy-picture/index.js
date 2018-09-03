@@ -24,7 +24,7 @@ class Component extends TemplateLite(HTMLElement) {
   }
 
   connectedCallback () {
-    if (super.this.connectedCallback) super.connectedCallback();
+    if (super.connectedCallback) super.connectedCallback();
     const options = {
       threshold: [0.25, 0.75]
     };
@@ -76,7 +76,7 @@ class Component extends TemplateLite(HTMLElement) {
   }
 
   get cover () {
-    return this._cover;
+    return this._cover || false;
   }
 
   set src (src) {
@@ -85,7 +85,7 @@ class Component extends TemplateLite(HTMLElement) {
   }
 
   get src () {
-    return this._src;
+    return this._src || '';
   }
 
   set alt (alt) {
@@ -95,7 +95,8 @@ class Component extends TemplateLite(HTMLElement) {
   }
 
   get alt () {
-    return this._alt;
+    if (!this._alt) console.warn(`There's no alt text for this picture: ${this}`);
+    return this._alt || '';
   }
 
   set srcset (srcset) {
@@ -104,7 +105,7 @@ class Component extends TemplateLite(HTMLElement) {
   }
 
   get srcset () {
-    return this._srcset;
+    return this._srcset || '';
   }
 
   set sizes (sizes) {
@@ -113,7 +114,7 @@ class Component extends TemplateLite(HTMLElement) {
   }
 
   get sizes () {
-    return this._sizes;
+    return this._sizes || '';
   }
 
   attributeChangedCallback (attr, oldValue, newValue) {
@@ -128,9 +129,9 @@ class Component extends TemplateLite(HTMLElement) {
           this.shadowRoot.insertBefore(this._thumbnailElement, picture);
         }
         setTimeout(() => {
-          this._thumbnailElement.src = this._thumbnail;
-          this._imageElement.src = this._src;
-          this._imageElement.srcset = this._srcset;
+          if (this._thumbnail) this._thumbnailElement.src = this._thumbnail;
+          if (this._src) this._imageElement.src = this._src;
+          if (this._srcset) this._imageElement.srcset = this._srcset;
           if (picture && !picture.contains(this._imageElement)) setTimeout(() => { picture.appendChild(this._imageElement); });
         });
       }
@@ -145,7 +146,7 @@ class Component extends TemplateLite(HTMLElement) {
     this.dispatchEvent(event);
   }
 
-  _imageActivate (entries) {
+  _activateImage (entries) {
     this.active = entries[0].intersectionRatio > 0.25;
   }
 }

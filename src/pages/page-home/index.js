@@ -2,6 +2,7 @@ import { TemplateLite } from '@littleq/element-lite/template-lite.js';
 import { render, html } from 'lit-html';
 import { template } from './template.js';
 import style from './style.styl';
+import '../../components/lazy-picture/index.js';
 const { HTMLElement, customElements } = window;
 
 class Page extends TemplateLite(HTMLElement, style.toString()) {

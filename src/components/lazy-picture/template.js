@@ -1,5 +1,5 @@
 const template = () => `
-  Component
+  <picture></picture>
 `;
 
 export { template };

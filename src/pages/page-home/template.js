@@ -1,5 +1,6 @@
 const template = html => html`
-  Hello World
+  <lazy-picture src='/assets/images/banner/mobile.jpg'>
+  </lazy-picture>
 `;
 
 export { template };
