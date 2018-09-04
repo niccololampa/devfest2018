@@ -122,7 +122,7 @@ const template = (html, self) => function () {
 
         <div class="sponsor-list">
           <div class="sponsor">
-            <a href="https://google.com" class="sponsor-link" target="_blank" rel="noopener">
+            <a href="https://google.com" class="sponsor-link" target="_blank" rel="noopener" title="Google">
               <lazy-picture src="/assets/images/sponsors/google.jpg" class="sponsor-image" alt="Google"></lazy-picture>
             </a>
           </div>
