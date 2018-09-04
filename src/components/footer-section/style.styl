@@ -1,0 +1,59 @@
+@import '../../styles/general/color.styl'
+
+:host
+  display block
+  background $dark-violet /* Old browsers */
+  background linear-gradient(to right, #36145d 0%,#ba00e0 100%);
+  padding: 3rem
+  @media screen and (max-width: 500px)
+    padding: 2rem 3rem
+
+.footer
+  display flex
+  align-items center
+  @media screen and (max-width: 860px)
+    display block
+
+.logo-anchor
+  text-decoration none
+  color inherit
+
+.logo
+  margin-top 12px
+  height 4rem
+  width 20rem
+  @media screen and (max-width: 350px)
+    height 3rem
+
+.spacer
+  flex 1
+
+.social-nav-list
+  display flex
+  margin 0
+  padding 0
+  list-style-type none
+  @media screen and (max-width: 860px)
+    margin: 3rem 0 0 -20px
+  @media screen and (max-width: 400px)
+    margin: 2rem 0 0 -10px
+  @media screen and (max-width: 350px)
+    margin 1rem 0 0 -10px
+
+.social-nav
+  margin 10px 20px
+  display block
+  list-style-type none
+  @media screen and (max-width: 400px)
+    margin: 10px
+  @media screen and (max-width: 350px)
+    margin 10px
+
+
+.social-icon-anchor
+  text-decoration none
+  color $light
+
+.social-icon
+  width 2rem
+  fill $light

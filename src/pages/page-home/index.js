@@ -4,6 +4,7 @@ import { template } from './template.js';
 import style from './style.styl';
 import '../../components/lazy-picture/index.js';
 import '../../components/banner-link/index.js';
+import '../../components/footer-section/index.js';
 const { HTMLElement, customElements } = window;
 
 class Page extends TemplateLite(HTMLElement, style.toString()) {
@@ -12,7 +13,17 @@ class Page extends TemplateLite(HTMLElement, style.toString()) {
   static get renderer () { return render; }
 
   template () {
-    return html`<style>${style.toString()}</style>${template(html)}`;
+    return html`<style>${style.toString()}</style>${template(html, this)}`;
+  }
+
+  buy ({ target }) {
+    if (window.gtag) {
+      window.gtag('event', 'click', {
+        'event_category': 'buy_ticket',
+        'event_label': target.href,
+        'transport_type': 'beacon'
+      });
+    }
   }
 }
 

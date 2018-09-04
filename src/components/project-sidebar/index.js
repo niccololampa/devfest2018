@@ -24,6 +24,16 @@ class Component extends TemplateLite(HTMLElement) {
     const sidebar = this.shadowRoot.querySelector('.sidebar');
     sidebar.classList.remove('open');
   }
+
+  buy ({ target }) {
+    if (window.gtag) {
+      window.gtag('event', 'click', {
+        'event_category': 'buy_ticket',
+        'event_label': target.href,
+        'transport_type': 'beacon'
+      });
+    }
+  }
 }
 
 if (!customElements.get(Component.is)) {

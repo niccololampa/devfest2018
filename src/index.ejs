@@ -233,6 +233,19 @@
     </script>
     <% } %>
 
+    <% if (app.googleAnalytics && !htmlWebpackPlugin.options.dev) { %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<%= app.googleAnalytics %>"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.gtagId = '<%= app.googleAnalytics %>';
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', window.gtagId);
+    </script>
+    <% } %>
+
     <!--
       Use the webcomponents-loader script which will feature detect which Web
       Components features are missing and lazy load the appropriate polyfills.
@@ -255,16 +268,7 @@
               document.querySelector('.loader-text').innerHTML = text
             }
           });
-          // var scriptModule = document.createElement('script');
-          // scriptModule.async = true
-          // scriptModule.src = '/module.core.<%= package.version %>.js';
-          // scriptModule.crossOrigin = 'anonymous';
-          // scriptModule.setAttribute('type', 'module');
-          // scriptModule.addEventListener('error', function(error) {
-          //   if (document.querySelector('.core-lite-loader').style.opacity !== 0) {
-          //     document.querySelector('.loader-text').innerHTML = text
-          //   }
-          // });
+
           var refScript = document.body.getElementsByTagName('script')[0];
           refScript.parentNode.insertBefore(script, refScript);
           // refScript.parentNode.insertBefore(scriptModule, refScript);
