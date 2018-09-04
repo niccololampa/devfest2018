@@ -3,7 +3,7 @@ const template = (html) => html`
     <a class="logo-anchor" href="https://gdgph.org" aria-label="GDG Philippines Website" target="_blank" rel="noopener">
       <lazy-picture
           class="logo"
-          src="/assets/images/gdgph-3.png"
+          src="/assets/images/gdgph-white.png"
           alt="GDG Philippines logo">
       </lazy-picture>
     </a>
