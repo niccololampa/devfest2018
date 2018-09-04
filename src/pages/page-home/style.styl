@@ -14,7 +14,7 @@
   min-height 100vh
   position relative
   z-index 2
-  padding-bottom 10rem
+  padding-bottom 15rem
 
   .banner-text
     padding 18rem 2rem 0
@@ -67,9 +67,6 @@
 .button-outline
   button-outline-base()
 
-.section
-  padding 0.5rem 1.5rem
-
 .card
   limit-width()
   shadow(3)
@@ -88,6 +85,8 @@
 
 .white
   h1-class($dark)
+  h2-class($dark)
+  color $dark
   background $light
 
 .grid
@@ -119,3 +118,31 @@
       .icon
         width 3rem
         fill $dark-violet
+
+.limit-width
+  limit-width()
+
+.tiny-limit-width
+  margin 0 auto
+  tiny-limit-width()
+
+.center
+  text-align center
+
+.section
+  padding 0.5rem 1.5rem 3rem
+
+  .section-title
+    font-size 3rem
+
+.sponsor-group
+  padding 1.5rem
+
+.sponsor-list
+  display grid
+  justify-items center
+  grid-template-columns repeat("auto-fit", minmax(100px, 100%))
+
+.sponsor-image
+  max-width 250px
+  width 100%
