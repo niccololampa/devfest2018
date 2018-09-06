@@ -5,14 +5,15 @@
 Project Management includes our workflow: which is `git flow`, how to fork, how do we name our commits, how do we do a proper pull request, and other things...
 
 1. [Overview](project-management/README.md)
-2. [Installation](project-management/Installation.md)
-3. [Running](project-management/Running.md)
-4. [Project Structure](project-management/Project-Structure.md)
-5. [Forking and Branch Naming](project-management/Forking-and-Branching.md)
-6. [Commit Conventions](project-management/Commit.md)
-7. [Updating Your Own Branch](project-management/Update-from-Develop.md)
-8. [Testing](project-management/Testing.md)
-9. [Making a Pull Request](project-management/Pull-Request.md)
+2. [Development Environment](project-management/Development-Environment.md)
+3. [Installation](project-management/Installation.md)
+4. [Running](project-management/Running.md)
+5. [Project Structure](project-management/Project-Structure.md)
+6. [Forking and Branch Naming](project-management/Forking-and-Branching.md)
+7. [Commit Conventions](project-management/Commit.md)
+8. [Updating Your Own Branch](project-management/Update-from-Develop.md)
+9. [Testing](project-management/Testing.md)
+10. [Making a Pull Request](project-management/Pull-Request.md)
 
 ## Front-end
 
