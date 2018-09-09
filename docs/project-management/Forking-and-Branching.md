@@ -1,97 +1,106 @@
 # Forking and Branching Guidelines
-This section guides contributors through the naming convention and processess that will be followed when contributing fixes and enhancements to  Devfest 2018 repository.
+This section guides contributors through the naming convention and processess that will be followed when contributing fixes and enhancements to this repository. Please follow the rules at [CONTRIBUTING](../../CONTRIBUTING.md) file for basic rules on how to contribute.
 
-## Contributing to the DevFest 2018 Code
+## Forking the project
 
-## 1. Setting Up Your System
+Go back to the top level of this [repo](https://github.com/gdgphilippines/devfest2018)
 
-1.1 Install [Git](https://git-scm.com/) or your choice Git client.
+Click the "Fork" button in the upper right hand corner of the interface ([More Details Here](http://help.github.com/fork-a-repo))
 
-1.2 (Optional) [Setup an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.  
+After the repository (repo) has been forked, you will be taken to your copy of the repo
 
-## 2 Forking GDG the project
+## Create a local clone of your fork
 
-2.1 Go to  the top level [devfest2018](https://github.com/gdgphilippines/devfest2018) repository.
+In your own forked repo, on the right hand side, there's a button called "Clone or Download", click on it.
 
-2.2 Click the "Fork" Button in the upper right hand corner of the interface ([More Details Here](http://help.github.com/fork-a-repo))
+If you did the [SSH](Requirements.md) section of GIT, you can copy the SSH link of the Github repo. If not, copy the HTTPS link.
 
-2.3 After the repository (repo) has been forked, you will be taken to your copy of the devfest2018 repo at https://github.com/yourUsername/freeCodeCamp
+Open a **Terminal** / **Command Line** / **Bash Shell** in your projects directory.
 
-## 3  Create a local clone of your fork
+Then type the following command
 
-3.1 On GitHub, navigate to your fork of the devfest2018 repository.
+```
+git clone [the-link-that-you-copied]
+```
 
-3.2 Under the repository name, click Clone or download.
+Example (SSH)
 
-3.3 In the Clone with HTTPs section, click  to copy the clone URL for the repository.
+```
+git clone git@github.com:[yourUserName]/devfest2018.git
+```
 
-3.4 Open a **Terminal** / **Command Line** / **Bash Shell** in your projects directory (i.e.: /yourprojectdirectory/)
+or for HTTPS
 
-3.5 Clone your fork of the devfest 2018 repo
+```
+git clone https://github.com/[yourUserName]/devfest2018.git
+```
 
-    $ git clone https://github.com/yourUsername/devfest2018.git
-**(make sure to replace `yourUsername` with your GitHub username)**
-
-This will then download the entire devfest2018 repo to your local machine
+This will then download the entire repo to your local machine
 
 
 ## 4 Setting up the Upstream
 
-4.1 Navigate to your newly cloned directory
-    
-    cd devfest2018
-
-4.2 Add a remote to the official devfest2018 repo:
-
-    $ git remote add upstream https://github.com/gdgphilippines/devfest2018.git
-
-4.3 (Optional) To get the latest changes from upstream
-    
-    git checkout <dev-branch>
-    git pull upstream <dev-branch>
-
-## 5 Maintaining your own fork
-
-### 5.1 Rebasing from upstream
-
-Do this prior to everytime you create a branch for Pull RequestS:
-    
-5.1.1 To check on which branch you are on
+Navigate to your newly cloned directory
 
 ```
-$ git status
-On branch staging
-Your branch is up-to-date with 'origin/develop'.
+cd devfest2018
 ```
 
-5.1.2 Locally merge(or rebase) the upstream development branch into your own dev branch,  without making an additional commit in your local repo:
+Add a remote to the official devfest2018 repo:
 
-    git pull [--rebase] upstream <dev-branch>
+```
+git remote add upstream https://github.com/gdgphilippines/devfest2018.git
+```
 
+(Optional) To get the latest changes from upstream
 
+```
+git checkout develop
+git pull upstream develop
+```
 
-### 5.2 Creating a Branch
+## Picking the Task / Issue that you want to fix
 
-5.2.1 Name and create your own branch, different from the main development branch of the repo to contain your updates, this will also make you switch to it
+Now that you have a local copy on your machine, it is time to contribue.
 
-    git checkout -b <topic-branch-name>
+Go back to the [issue section of the repo](https://github.com/gdgphilippines/devfest2018/issues).
 
-- Commit your changes in chunks
-- Please adhere to these [git commit message guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html) or your code will not be merged to the main project
-- You can use Git's [interactive rebase](https://help.github.com/articles/interactive-rebase) feature to tidy up your commits making them public
-- Resolve outstanding files and  or commits and checkout your own `dev-branch`
+Find an issue that you think you can do and click on it.
 
-5.2.2 Change working branch
+![Issues](./images/issues.png)
 
-    $ git checkout [topic-branch-name]
+Once you went there, take note of the title and issue number. Assign it to yourself and use the comments section to ask questions if you need more information.
 
+![Issue](./images/issue.png)
 
-5.2.3 Push your own dev branch up to your own fork
+On your **Terminal** / **Command Line** / **Bash Shell** (make sure you are in your project folder), create a branch from develop
 
-    git push origin <topic-branch-name>
+```
+git checkout develop        # to make sure that you in develop branch
+git pull upstream develop   # to pull any updates from the main develop branch
+git push origin develop     # to update your own forked repo from updates from main develop branch
+git checkout -b [slugified-issue-title]-#[issue-number] # this is to create a new branch with reference to your issue that you picked
+git push -u origin [slugified-issue-title]-#[issue-number]
+```
 
-## 6 Checking the tasks 
+The last two commands, for example, given the picture, should be written like this:
 
-- Tasks can be viewed here [waffle.io](https://waffle.io/gdgphilippines/devfest2018)
-- Can also be checked on the [issues](https://github.com/gdgphilippines/devfest2018/issues) tab of the devfest2018 repo
-- Or some tasks will be assigned accordingly
+```
+git checkout -b add-sentry-release-deployment-code-for-tracking-#15
+git push -u origin add-sentry-release-deployment-code-for-tracking-#15
+```
+
+Or if you want it short
+
+```
+git checkout -b add-sentry-#15
+git push -u origin add-sentry-#15
+```
+
+## What's next?
+
+Once you have a working branch, you can see the project structure of the repo. You can understand it more by looking at the [Project Structre page](Project-Structure.md) or you can now test out the files by [installing](Installation.md) and [running](Running.md) them or you can now go and edit and [do commits](Commit.md).
+
+## (Optional / Advanced) Rebase
+
+You can use Git's [interactive rebase](https://help.github.com/articles/interactive-rebase) feature to tidy up your commits making them public.

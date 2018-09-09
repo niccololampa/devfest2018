@@ -47,4 +47,4 @@ As for Windows users, you can use any other online Cloud IDE with Linux Environm
 
 ## What's next?
 
-Once you are ok with your development environment, you can go to [Installation and Requirements](Installation.md) on what you need to install to run this.
+Once you are ok with your development environment, you can go to [Tool Requirements](Requirements.md) on what you need to install to run this.
