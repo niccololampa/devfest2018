@@ -65,6 +65,18 @@ git commit -m "[verb] [description]"
 You can see examples from [CONTRIBUTING](../../CONTRIBUTING.md), but rule of thumb: Make it concise.
 You can also follow the commit guidelines from http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 
+## Updating from Main Develop branch
+
+There might be times that you want to get new updates from main develop branch (like when we update main develop branch because others have finished their tasks).
+
+To be able to update your branch so that you can catch conflicts later on, do this command **after you have done your commits**.
+
+```
+git pull --rebase upstream develop
+```
+
+If there are merge conflicts, fixed the before doing another commit or pushing to your repo.
+
 ## Pushing to your repo
 
 Once you are done, you can push your commits to your remote repo.

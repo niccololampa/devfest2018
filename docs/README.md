@@ -12,10 +12,9 @@ Project Management includes our workflow: which is `git flow`, how to fork, how 
 6. [Dependency Installation](project-management/Installation.md)
 7. [Running](project-management/Running.md)
 8. [Commit Conventions](project-management/Commit.md)
-9. [Updating Your Own Branch](project-management/Update-from-Develop.md)
-10. [Testing](project-management/Testing.md)
-11. [Making a Pull Request](project-management/Pull-Request.md)
-12. [Doing a Pull Request Review](project-management/Review.md)
+9. [Testing](project-management/Testing.md)
+10. [Making a Pull Request](project-management/Pull-Request.md)
+11. [Doing a Pull Request Review](project-management/Review.md)
 
 ## Front-end
 
