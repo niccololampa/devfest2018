@@ -1,7 +1,7 @@
 const template = (html, self) => function () {
   const { href, main, sub } = this;
   return html`
-    <a href="${href}" target="_blank" rel="noopener" class="banner-link">
+    <a href="${href}" target="_blank" rel="noopener" class="banner-anchor">
       <div class="icon-container">
         <slot></slot>
       </div>
