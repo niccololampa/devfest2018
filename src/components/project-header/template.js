@@ -13,8 +13,6 @@ const template = (html, self) => function () {
           </lazy-picture>
         </a>
       </h1>
-      <div class="spacer">
-      </div>
       <navigation-loader>
         <header-navigation class="hide-on-mobile">
         </header-navigation>
