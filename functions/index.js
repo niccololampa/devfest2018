@@ -1,10 +1,10 @@
 const functions = require('firebase-functions');
 
-const httpsActions = require('./https/actions.js');
-const httpsModels = require('./https/models.js');
+const helloWorld = require('./https/actions/helloworld');
+const user = require('./https/models/user');
 
-exports.helloWorld = functions.https.onRequest(httpsActions.helloWorld());
-exports.user = functions.https.onRequest(httpsModels.user());
+exports.helloWorld = functions.https.onRequest(helloWorld());
+exports.user = functions.https.onRequest(user());
 
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions

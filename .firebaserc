@@ -1,6 +1,7 @@
 {
   "projects": {
     "default": "devfestph",
-    "devfest-2018-test": "gdgph-test"
+    "devfest-2018-test": "gdgph-test",
+    "devfest-test": "gdgph-test"
   }
 }
