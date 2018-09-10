@@ -7,7 +7,6 @@ const template = (html) => html`
           alt="GDG Philippines logo">
       </lazy-picture>
     </a>
-    <div class="spacer"></div>
     <nav class="social-nav-container">
       <ul class="social-nav-list">
         <li class="social-nav">
