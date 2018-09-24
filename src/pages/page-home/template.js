@@ -104,6 +104,13 @@ const template = (html, self) => function () {
         </div>
       </div>
     </section>
+
+    <speaker-section>
+      <speaker-list-loader>
+        <speaker-list></speaker-list>
+      </speaker-list-loader>
+    </speaker-section>
+
     <section class="section limit-width white center">
       <h1 class="h1 section-title">
         Thank you to our Sponsors
