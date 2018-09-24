@@ -9,9 +9,9 @@ const { HTMLElement, customElements } = window;
 class Component extends TemplateLite(PropertiesLite(HTMLElement)) {
   static get is () { return 'speaker-list'; }
 
-  static get renderer () { return render; }
+  static get renderer () { return render; } // TemplateLite
 
-  static get properties () {
+  static get properties () { // PropertiesLite
     return {
       speakers: {
         type: Array,
@@ -21,7 +21,7 @@ class Component extends TemplateLite(PropertiesLite(HTMLElement)) {
   }
 
   template () {
-    return html`<style>${style.toString()}</style>${template(html, this)}`;
+    return html`<style>${style.toString()}</style>${template(html, this)}`; // TemplateLite
   }
 }
 

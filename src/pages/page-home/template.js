@@ -105,9 +105,9 @@ const template = (html, self) => function () {
       </div>
     </section>
 
-    <speaker-section>
-      <speaker-list-loader>
-        <speaker-list></speaker-list>
+    <speaker-section> <!-- Section container that is reusable -->
+      <speaker-list-loader> <!-- Data loader aka smart-component -->
+        <speaker-list></speaker-list> <!-- data container which shows how data should be visualized aka dumb-component -->
       </speaker-list-loader>
     </speaker-section>
 

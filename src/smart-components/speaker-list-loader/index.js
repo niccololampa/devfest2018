@@ -41,6 +41,30 @@ class Component extends TemplateLite(HTMLElement) {
         img: 'https://developers.google.com/experts/img/user/106755551521071658037.png',
         affiliation: 'University of the Philippines Los Banos',
         location: 'Philippines'
+      },
+      {
+        $key: '',
+        img: 'https://developers.google.com/experts/img/user/106755551521071658037.png',
+        affiliation: 'University of the Philippines Los Banos',
+        location: 'Philippines'
+      },
+      {
+        $key: '',
+        img: 'https://developers.google.com/experts/img/user/106755551521071658037.png',
+        affiliation: 'University of the Philippines Los Banos',
+        location: 'Philippines'
+      },
+      {
+        $key: '',
+        img: 'https://developers.google.com/experts/img/user/106755551521071658037.png',
+        affiliation: 'University of the Philippines Los Banos',
+        location: 'Philippines'
+      },
+      {
+        $key: '',
+        img: 'https://developers.google.com/experts/img/user/106755551521071658037.png',
+        affiliation: 'University of the Philippines Los Banos',
+        location: 'Philippines'
       }
     ];
   }
