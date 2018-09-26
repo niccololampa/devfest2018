@@ -19,11 +19,13 @@ class Component extends TemplateLite(PropertiesLite(HTMLElement)) {
       },
       img: {
         type: String,
-        value: ''
+        value: '',
+        notify: true
       },
       thumbnail: {
         type: String,
-        value: ''
+        value: '',
+        notify: true
       }
     };
   }
@@ -32,11 +34,11 @@ class Component extends TemplateLite(PropertiesLite(HTMLElement)) {
     return html`<style>${style.toString()}</style>${template(html, this)}`;
   }
 
-  _imgChanged ({ detail: img }) {
+  _updateImg ({ detail: img }) {
     this.img = img;
   }
 
-  _thumbnailChanged ({ detail: img }) {
+  _updateThumbnail ({ detail: img }) {
     this.thumbnail = img;
   }
 }

@@ -4,7 +4,7 @@ import { render, html } from 'lit-html';
 import { template } from './template.js';
 import style from './style.styl';
 import '../speaker-summary-item/index.js';
-const { HTMLElement, customElements } = window;
+const { HTMLElement, customElements, CustomEvent } = window;
 
 class Component extends TemplateLite(PropertiesLite(HTMLElement)) {
   static get is () { return 'speaker-list'; }
@@ -22,6 +22,14 @@ class Component extends TemplateLite(PropertiesLite(HTMLElement)) {
 
   template () {
     return html`<style>${style.toString()}</style>${template(html, this)}`; // TemplateLite
+  }
+
+  _saveImg ({ target: el, detail: img }) {
+    this.dispatchEvent(new CustomEvent('save-image', { detail: { img, $key: el.speaker.$key } }));
+  }
+
+  _saveThumbnail ({ target: el, detail: thumbnail }) {
+    this.dispatchEvent(new CustomEvent('save-thumbnail', { detail: { thumbnail, $key: el.speaker.$key } }));
   }
 }
 
