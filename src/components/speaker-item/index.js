@@ -3,16 +3,17 @@ import { PropertiesLite } from '@littleq/element-lite/properties-lite.js';
 import { render, html } from 'lit-html';
 import { template } from './template.js';
 import style from './style.styl';
+import '../mark-lite/index.js';
 import '../lazy-picture/index.js';
 import '../../smart-components/storage-url-loader/index.js';
 const { HTMLElement, customElements } = window;
 
 class Component extends TemplateLite(PropertiesLite(HTMLElement)) {
-  static get is () { return 'speaker-summary-item'; }
+  static get is () { return 'speaker-item'; }
 
-  static get renderer () { return render; }
+  static get renderer () { return render; } // TemplateLite
 
-  static get properties () {
+  static get properties () { // PropertiesLite
     return {
       speaker: {
         type: Object,
@@ -32,7 +33,7 @@ class Component extends TemplateLite(PropertiesLite(HTMLElement)) {
   }
 
   template () {
-    return html`<style>${style.toString()}</style>${template(html, this)}`;
+    return html`<style>${style.toString()}</style>${template(html, this)}`; // TemplateLite
   }
 
   _updateImg ({ detail: img }) {

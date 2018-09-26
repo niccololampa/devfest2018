@@ -29,6 +29,7 @@ const theme = {
 const fragments = {
   'page-home': 'src/pages/page-home/index.js',
   'page-speakers': 'src/pages/page-speakers/index.js',
+  'page-speaker': 'src/pages/page-speaker/index.js',
   'page-not-found': 'src/pages/page-not-found/index.js'
 };
 
@@ -40,6 +41,10 @@ const routes = [
   {
     route: '/speakers',
     page: 'page-speakers'
+  },
+  {
+    route: '/speakers/:speakerId',
+    page: 'page-speaker'
   },
   {
     route: 'no-page',

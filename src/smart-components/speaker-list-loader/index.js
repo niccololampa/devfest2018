@@ -23,11 +23,13 @@ class Component extends TemplateLite(HTMLElement) {
   }
 
   async load () {
-    const el = this.querySelector('speaker-list');
+    const el = this.firstElementChild;
     el.speakers = await getItem(summaryList) || [];
     el.addEventListener('save-image', this._boundSaveImg);
     el.addEventListener('save-thumbnail', this._boundSaveThumbnail);
-    const data = await readDatabaseOnce('main', { path: 'events/devfest2018/speakers/lists/summary' });
+    const data = await readDatabaseOnce('main', {
+      path: 'events/devfest2018/speakers/lists/summary'
+    });
     const speakers = [];
     for (let $key in data) {
       const index = el.speakers.findIndex(speaker => speaker.$key === $key);

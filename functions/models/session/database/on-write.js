@@ -1,24 +1,22 @@
 const onWrite = () => (change, context) => {
   const { after } = change;
   const { params } = context;
-  const { speakerId } = params;
-  const { name, affiliation, location } = after.val();
+  const { sessionId } = params;
+  const { title } = after.val();
   console.log(after.exists());
   return after
     .ref
     .parent
     .parent
-    .child(`lists/summary/${speakerId}`)
+    .child(`lists/summary/${sessionId}`)
     .set(after.exists()
       ? {
-        name: name || null,
-        affiliation: affiliation || null,
-        location: location || null
+        title: title || null
       }
       : null);
 };
 
 module.exports = functions => functions
   .database
-  .ref(`events/{eventId}/speakers/data/{speakerId}`)
+  .ref(`events/{eventId}/sessions/data/{sessionId}`)
   .onWrite(onWrite());
