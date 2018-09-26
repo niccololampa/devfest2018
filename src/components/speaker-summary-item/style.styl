@@ -1,10 +1,26 @@
 @import '../../styles/components/button.styl'
+@import '../../styles/general/color.styl'
 
 :host
   text-align center
+  padding-top 24px;
+
+.image-container
+  min-height 200px
+  margin-bottom 24px
 
 .image
   --border-radius 50%
+  border-radius 50%
+  background $light
+  max-width 200px
+  max-height 200px
 
 .button-outline
   button-outline-base()
+
+.name, .affiliation, .location
+  margin 6px
+
+.location
+  margin-bottom 24px

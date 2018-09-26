@@ -1,4 +1,5 @@
 import { TemplateLite } from '@littleq/element-lite/template-lite.js';
+import { readDatabaseOnce } from '../../utils/firebase';
 const { HTMLElement, customElements } = window;
 
 class Component extends TemplateLite(HTMLElement) {
@@ -14,59 +15,16 @@ class Component extends TemplateLite(HTMLElement) {
   }
 
   async load () {
-    // use firebase in a bit
-
     const el = this.querySelector('speaker-list');
-    el.speakers = [
-      {
-        $key: '',
-        img: 'https://developers.google.com/experts/img/user/106755551521071658037.png',
-        affiliation: 'University of the Philippines Los Banos',
-        location: 'Philippines'
-      },
-      {
-        $key: '',
-        img: 'https://developers.google.com/experts/img/user/106755551521071658037.png',
-        affiliation: 'University of the Philippines Los Banos',
-        location: 'Philippines'
-      },
-      {
-        $key: '',
-        img: 'https://developers.google.com/experts/img/user/106755551521071658037.png',
-        affiliation: 'University of the Philippines Los Banos',
-        location: 'Philippines'
-      },
-      {
-        $key: '',
-        img: 'https://developers.google.com/experts/img/user/106755551521071658037.png',
-        affiliation: 'University of the Philippines Los Banos',
-        location: 'Philippines'
-      },
-      {
-        $key: '',
-        img: 'https://developers.google.com/experts/img/user/106755551521071658037.png',
-        affiliation: 'University of the Philippines Los Banos',
-        location: 'Philippines'
-      },
-      {
-        $key: '',
-        img: 'https://developers.google.com/experts/img/user/106755551521071658037.png',
-        affiliation: 'University of the Philippines Los Banos',
-        location: 'Philippines'
-      },
-      {
-        $key: '',
-        img: 'https://developers.google.com/experts/img/user/106755551521071658037.png',
-        affiliation: 'University of the Philippines Los Banos',
-        location: 'Philippines'
-      },
-      {
-        $key: '',
-        img: 'https://developers.google.com/experts/img/user/106755551521071658037.png',
-        affiliation: 'University of the Philippines Los Banos',
-        location: 'Philippines'
-      }
-    ];
+    const data = await readDatabaseOnce('main', { path: 'events/devfest2018/speakers/lists/summary' });
+    const speakers = [];
+    for (let $key in data) {
+      speakers.push({
+        $key,
+        ...data[$key]
+      });
+    }
+    el.speakers = speakers;
   }
 }
 

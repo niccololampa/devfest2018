@@ -3,6 +3,7 @@ import { PropertiesLite } from '@littleq/element-lite/properties-lite.js';
 import { render, html } from 'lit-html';
 import { template } from './template.js';
 import style from './style.styl';
+import '../../smart-components/storage-url-loader/index.js';
 const { HTMLElement, customElements } = window;
 
 class Component extends TemplateLite(PropertiesLite(HTMLElement)) {
@@ -15,12 +16,28 @@ class Component extends TemplateLite(PropertiesLite(HTMLElement)) {
       speaker: {
         type: Object,
         value: {}
+      },
+      img: {
+        type: String,
+        value: ''
+      },
+      thumbnail: {
+        type: String,
+        value: ''
       }
     };
   }
 
   template () {
     return html`<style>${style.toString()}</style>${template(html, this)}`;
+  }
+
+  _imgChanged ({ detail: img }) {
+    this.img = img;
+  }
+
+  _thumbnailChanged ({ detail: img }) {
+    this.thumbnail = img;
   }
 }
 
