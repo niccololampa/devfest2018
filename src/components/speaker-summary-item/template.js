@@ -13,8 +13,8 @@ const template = (html, self) => function () {
     <div class="image-container">
       ${thumbnail || oldThumbnail
         ? html`
-          <a href="/speakers/${$key}">
-            <lazy-picture class="image" thumbnail=${(thumbnail || oldThumbnail)} src=${(img || oldImg)}></lazy-picture>
+          <a class="image-anchor" href="/speakers/${$key}">
+            <lazy-picture alt="Picture of ${name}" class="image" thumbnail=${(thumbnail || oldThumbnail)} src=${(img || oldImg)}></lazy-picture>
           </a>
         `
         : ''

@@ -1,0 +1,20 @@
+@import '../../styles/general/layout.styl';
+@import '../../styles/general/spacing.styl';
+@import '../../styles/general/color.styl';
+@import '../../styles/general/typography.styl';
+
+:host
+  display flex
+  flex-flow column
+  min-height 300px
+  padding 24px
+  background $light
+
+.h1
+  h1-base($dark);
+
+.description
+  flex 1
+
+mark-lite
+  color $dark

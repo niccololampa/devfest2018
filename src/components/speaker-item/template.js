@@ -13,7 +13,9 @@ const template = (html, self) => function () {
       <div class="image-container">
         ${thumbnail || oldThumbnail
           ? html`
-            <lazy-picture class="image" thumbnail=${(thumbnail || oldThumbnail)} src=${(img || oldImg)}></lazy-picture>
+            <span class="image-anchor">
+              <lazy-picture alt="Picture of ${name}" class="image" thumbnail=${(thumbnail || oldThumbnail)} src=${(img || oldImg)}></lazy-picture>
+            </span>
           `
           : ''
         }
@@ -29,11 +31,18 @@ const template = (html, self) => function () {
       </p>
     </div>
     <div class="bio-section">
-      <mark-lite class="bio" .text=${bio}></mark-lite>
+      <mark-lite class="bio" .text=${(bio || 'Gathering data...')}></mark-lite>
 
-      <session-summary-loader .sessionId=${session}>
-        <session-summary-item></session-summary-item>
-      </session-summary-item>
+      ${session
+        ? html`
+          <h1 class="session-h1">
+            Sessions
+          </h1>
+          <session-summary-loader .sessionId=${session}>
+            <session-summary-item></session-summary-item>
+          </session-summary-item>
+        ` : ''}
+
     </div>
   `;
 }.bind(self)();
