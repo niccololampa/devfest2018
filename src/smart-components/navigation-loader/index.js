@@ -7,10 +7,14 @@ class Component extends TemplateLite(HTMLElement) {
   connectedCallback () {
     if (super.connectedCallback) super.connectedCallback();
     this._setNavigation([
-      // {
-      //   label: 'Page 1',
-      //   href: '/page-one'
-      // }
+      {
+        label: 'Home',
+        href: '/'
+      },
+      {
+        label: 'Speakers',
+        href: '/speakers'
+      }
     ]);
   }
 

@@ -1,6 +1,7 @@
 const template = (html, self) => function () {
   const { navigation } = this;
   return html`
+    <!-- lit-html documentation -->
     <nav class="header-navigation">
       <ul class="navigation-list">
         ${navigation.map(i => html`

@@ -1,6 +1,6 @@
 {
   "name": "devfest2018",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Element Lite Starter Kit",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,8 @@
     "webpack-prod-module": "./node_modules/.bin/webpack --mode=production --env.BROWSERS=module",
     "start-c9": "npm run npm-run-all --parallel compile-watch superstatic-dev-c9 webpack-dev",
     "serve": "node server",
-    "start": "npm run npm-run-all compile-watch superstatic-dev webpack-dev",
+    "dev": "npm run npm-run-all compile-watch superstatic-dev webpack-dev",
+    "start": "npm run dev",
     "workbox": "./node_modules/.bin/workbox generateSW workbox.config.js",
     "prod": "NODE_ENV=production && rm -r public && ./node_modules/.bin/npm-run-all compile webpack-prod webpack-prod-module compile workbox"
   },
@@ -38,9 +39,11 @@
     "es5-shim": "^4.5.10",
     "es6-promise": "^4.2.4",
     "es6-shim": "^0.35.3",
+    "firebase": "^5.5.1",
     "intersection-observer": "^0.5.0",
     "lit-html": "^0.11.0",
-    "localforage": "^1.7.1",
+    "localforage": "^1.7.2",
+    "marked": "^0.5.1",
     "object-fit-images": "^3.2.3",
     "raven-js": "^3.26.2",
     "weakmap-polyfill": "^2.0.0",

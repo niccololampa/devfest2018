@@ -1,0 +1,51 @@
+@import '../../styles/general/layout.styl';
+@import '../../styles/general/spacing.styl';
+@import '../../styles/general/color.styl';
+@import '../../styles/general/typography.styl';
+
+:host
+  display flex
+  align-items stretch
+  @media screen and (max-width: 600px)
+    display block
+
+.h1
+  h1-base($light);
+
+.session-h1
+  h1-base($dark);
+
+.image-section
+  flex 1
+  padding 24px
+  text-align center
+  background linear-gradient(to top, #36145d 0%,#ba00e0 100%);
+
+.bio-section
+  flex 3
+  padding 24px
+  background $light
+  color $dark
+  display flex
+  flex-flow column
+  min-height 300px
+
+.bio
+  flex 1
+
+.image-container
+  min-height 200px
+  margin-bottom 24px
+
+.image
+  --border-radius 50%
+  border-radius 50%
+  background $light
+  max-width 200px
+  max-height 200px
+
+.name, .affiliation, .location
+  margin 6px
+
+.location
+  margin-bottom 24px

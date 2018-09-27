@@ -1,7 +1,7 @@
 import { TemplateLite } from '@littleq/element-lite/template-lite.js';
 import { template } from './template.js';
 import style from './style.styl';
-const { HTMLElement, customElements, Event, IntersectionObserver } = window;
+const { HTMLElement, customElements, Event } = window;
 
 class Component extends TemplateLite(HTMLElement) {
   static get is () { return 'lazy-picture'; }
@@ -28,14 +28,22 @@ class Component extends TemplateLite(HTMLElement) {
       threshold: [0.25, 0.75]
     };
     setTimeout(() => {
-      this._observer = new IntersectionObserver(this._boundActivateImage, options);
-      this._observer.observe(this);
+      try {
+        this._observer = new window.IntersectionObserver(this._boundActivateImage, options);
+        this._observer.observe(this);
 
-      const sources = this.querySelectorAll('source');
-      const picture = this.shadowRoot.querySelector('picture');
-      for (let i = 0; i < sources.length; i++) {
-        const source = sources[i];
-        picture.appendChild(source.cloneNode(true));
+        const sources = this.querySelectorAll('source');
+        const picture = this.shadowRoot.querySelector('picture');
+        for (let i = 0; i < sources.length; i++) {
+          const source = sources[i];
+          picture.appendChild(source.cloneNode(true));
+        }
+      } catch (error) {
+        this.active = true;
+        console.error(error);
+        if (window.Raven) {
+          window.Raven.captureException(error);
+        }
       }
     });
   }
