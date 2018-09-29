@@ -28,7 +28,6 @@ const theme = {
 
 const fragments = {
   'page-home': 'src/pages/page-home/index.js',
-  'page-home-new': 'src/pages/page-home-new/index.js',
   'page-speakers': 'src/pages/page-speakers/index.js',
   'page-speaker': 'src/pages/page-speaker/index.js',
   'page-session': 'src/pages/page-session/index.js',
@@ -39,10 +38,6 @@ const routes = [
   {
     route: '/',
     page: 'page-home'
-  },
-  {
-    route: '/pagehomenew',
-    page: 'page-home-new'
   },
   {
     route: '/speakers',

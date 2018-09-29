@@ -79,7 +79,7 @@
   padding 0.5rem 3rem 3rem
 
 .overflow-top
-  margin -14rem auto 10rem
+  margin -5rem auto 3rem
   z-index 5
   position relative
 
@@ -149,3 +149,53 @@
 .sponsor-image
   max-width 250px
   width 100%
+
+// Added Classes by Stephen John Raymundo
+.convex-container
+  margin: -16rem auto 10rem;
+  z-index 5
+  position relative
+  background: none
+  background-image -webkit-radial-gradient(50% -100rem, circle closest-corner, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 100%, white calc(100% + 1px));
+  padding-top: 8rem
+
+.white-text
+  h1-class($light)
+  h2-class($light)
+  color $light
+
+.dark-text
+  h1-class($dark)
+  h2-class($dark)
+  color $dark
+
+.flex
+  display flex
+
+.about-h1
+  product-sans()
+  background linear-gradient(to right, #ba00e0 , #3a63f5);
+  -webkit-background-clip text;
+  -webkit-text-fill-color transparent;
+  font-size 3rem
+  text-align right
+
+.grid-three-fourths
+  grid-column-start: 3;
+  grid-column-end: 6;
+
+.about-grid
+  limit-width()
+
+.perks
+  display: flex
+  justify-content: center
+  flex-direction: row
+  flex-wrap: wrap
+
+  span
+    product-sans()
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 2rem 4rem

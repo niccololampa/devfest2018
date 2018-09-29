@@ -7,6 +7,12 @@ import '../../components/speaker-list/index.js';
 import '../../smart-components/speaker-list-loader/index.js';
 import '../../components/lazy-picture/index.js';
 import '../../components/banner-link/index.js';
+import '../../components/about-devfest/index.js';
+import '../../components/stat-section/index.js';
+import '../../components/stat-item/index.js';
+import '../../components/payment-options/index.js';
+import '../../components/feedback-section/index.js';
+import '../../components/feedback-item/index.js';
 import '../../components/footer-section/index.js';
 const { HTMLElement, customElements } = window;
 

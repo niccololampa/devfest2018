@@ -1,0 +1,31 @@
+@import '../../styles/general/limit-width.styl'
+@import '../../styles/general/typography.styl'
+@import '../../styles/general/color.styl'
+
+
+.cell
+  position: relative
+
+  .image
+    float: left
+    margin-right: 3rem
+
+  .content
+    product-sans()
+    margin-top: 2rem
+    display: flex;
+    flex-direction: column;
+    position: absolute
+    right: 0px
+    text-align: right
+
+  .name
+    font-size: 1.3rem
+
+  .quote
+    margin-bottom: 1rem
+  .quote:before
+    content: '"';
+
+  .quote:after
+    content: '"';

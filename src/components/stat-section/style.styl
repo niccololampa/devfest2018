@@ -3,4 +3,39 @@
 @import '../../styles/general/color.styl'
 
 section
+  padding: 2rem 0rem 8rem
   body-base($light)
+  background-color: #36145d
+
+.grid
+  limit-width()
+  display grid
+  grid-template-columns repeat(4, 1fr)
+
+  @media screen and (max-width: 1024px)
+    grid-template-columns repeat(2, 1fr)
+
+  @media screen and (max-width: 600px)
+    grid-template-columns 1fr
+
+  grid-gap 2rem
+
+  .cell
+    product-sans()
+    display flex
+    align-items center
+
+    @media screen and (max-width: 600px)
+      justify-content center
+
+    svg
+      margin 0rem 1rem
+
+    .number
+      font-size 1.5rem
+
+    .detail
+      font-size 1rem
+
+
+
