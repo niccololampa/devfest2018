@@ -12,6 +12,10 @@ class Component extends TemplateLite(HTMLElement) {
         href: '/'
       },
       {
+        label: 'Home (New)',
+        href: '/pagehomenew'
+      },
+      {
         label: 'Speakers',
         href: '/speakers'
       }
