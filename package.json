@@ -19,7 +19,8 @@
     "dev": "npm run npm-run-all compile-watch superstatic-dev webpack-dev",
     "start": "npm run dev",
     "workbox": "./node_modules/.bin/workbox generateSW workbox.config.js",
-    "prod": "NODE_ENV=production && rm -r public && ./node_modules/.bin/npm-run-all compile webpack-prod webpack-prod-module compile workbox"
+    "inject-prod": "node ./src/utils/inject-prod",
+    "prod": "NODE_ENV=production && rm -r public && ./node_modules/.bin/npm-run-all compile webpack-prod webpack-prod-module compile inject-prod workbox"
   },
   "repository": {
     "type": "git",

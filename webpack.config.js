@@ -8,59 +8,61 @@ const getHtmlOptions = require('./src/utils/html-webpack/get-html-options');
 const pkg = require('./package.json');
 const IS_DEV_SERVER = !!process.argv.find(arg => arg.includes('--mode=development'));
 
+const { version } = pkg;
+
 const copyStatics = {
   copyPolyfills: [
     {
       from: resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/bundles/*.js'),
-      to: 'vendor/bundles/[name].' + pkg.version + '.[ext]'
+      to: 'vendor/bundles/[name].' + version + '.[ext]'
     },
     {
       from: resolve(__dirname, './node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'),
-      to: 'vendor/custom-elements-es5-adapter.' + pkg.version + '.js'
+      to: 'vendor/custom-elements-es5-adapter.' + version + '.js'
     },
     {
       from: resolve(__dirname, './node_modules/es5-shim/es5-shim.min.js'),
-      to: 'vendor/es5-shim.' + pkg.version + '.js'
+      to: 'vendor/es5-shim.' + version + '.js'
     },
     {
       from: resolve(__dirname, './node_modules/es5-shim/es5-sham.min.js'),
-      to: 'vendor/es5-sham.' + pkg.version + '.js'
+      to: 'vendor/es5-sham.' + version + '.js'
     },
     {
       from: resolve(__dirname, './node_modules/es6-shim/es6-shim.min.js'),
-      to: 'vendor/es6-shim.' + pkg.version + '.js'
+      to: 'vendor/es6-shim.' + version + '.js'
     },
     {
       from: resolve(__dirname, './node_modules/es6-shim/es6-sham.min.js'),
-      to: 'vendor/es6-sham.' + pkg.version + '.js'
+      to: 'vendor/es6-sham.' + version + '.js'
     },
     {
       from: resolve(__dirname, './node_modules/weakmap-polyfill/weakmap-polyfill.min.js'),
-      to: 'vendor/weakmap-polyfill.' + pkg.version + '.js'
+      to: 'vendor/weakmap-polyfill.' + version + '.js'
     },
     {
       from: resolve(__dirname, './node_modules/es6-promise/dist/es6-promise.min.js'),
-      to: 'vendor/es6-promise.' + pkg.version + '.js'
+      to: 'vendor/es6-promise.' + version + '.js'
     },
     {
       from: resolve(__dirname, './node_modules/intersection-observer/intersection-observer.js'),
-      to: 'vendor/intersection-observer.' + pkg.version + '.js'
+      to: 'vendor/intersection-observer.' + version + '.js'
     },
     {
       from: resolve(__dirname, './node_modules/@webcomponents/shadycss/scoping-shim.min.js'),
-      to: 'vendor/scoping-shim.' + pkg.version + '.js'
+      to: 'vendor/scoping-shim.' + version + '.js'
     },
     {
       from: resolve(__dirname, './node_modules/whatwg-fetch/fetch.js'),
-      to: 'vendor/fetch.' + pkg.version + '.js'
+      to: 'vendor/fetch.' + version + '.js'
     },
     {
       from: resolve(__dirname, './node_modules/object-fit-images/dist/ofi.min.js'),
-      to: 'vendor/ofi.' + pkg.version + '.js'
+      to: 'vendor/ofi.' + version + '.js'
     },
     {
       from: resolve(__dirname, './node_modules/raven-js/dist/raven.min.js'),
-      to: 'vendor/raven.' + pkg.version + '.js'
+      to: 'vendor/raven.' + version + '.js'
     },
     {
       from: resolve(__dirname, './src/assets'),
@@ -91,8 +93,8 @@ const shared = env => {
     },
     output: {
       path: resolve(__dirname, 'public'),
-      chunkFilename: IS_MODULE_BUILD ? 'module.[chunkhash].fragment.' + pkg.version + '.js' : '[chunkhash].fragment.' + pkg.version + '.js',
-      filename: IS_MODULE_BUILD ? 'module.[name].' + pkg.version + '.js' : '[name].' + pkg.version + '.js',
+      chunkFilename: IS_MODULE_BUILD ? 'module.[chunkhash].fragment.' + version + '.js' : '[chunkhash].fragment.' + version + '.js',
+      filename: IS_MODULE_BUILD ? 'module.[name].' + version + '.js' : '[name].' + version + '.js',
       publicPath: '/'
     },
     resolve: {
@@ -115,7 +117,7 @@ const shared = env => {
             {
               loader: 'worker-loader',
               options: {
-                name: IS_MODULE_BUILD ? 'module.[hash].worker.' + pkg.version + '.js' : '[hash].worker.' + pkg.version + '.js'
+                name: IS_MODULE_BUILD ? 'module.[hash].worker.' + version + '.js' : '[hash].worker.' + version + '.js'
               }
             },
             {
