@@ -1,0 +1,30 @@
+@import '../../styles/general/limit-width.styl'
+@import '../../styles/general/typography.styl'
+@import '../../styles/general/color.styl'
+
+section
+  product-sans()
+  padding: 2rem 0rem 8rem
+  body-base($light)
+  background linear-gradient(to right, #ba00e0 , #36145d);
+  display flex
+  align-items: center
+  flex-direction: column
+
+h1
+  product-sans()
+  font-weight: 300
+  text-align: center
+  border: 1px solid white
+  border-radius: 3rem
+  padding 0.5rem 2rem
+
+.grid
+  limit-width()
+  display grid
+  grid-template-columns repeat(2, 1fr)
+
+  @media screen and (max-width: 600px)
+    grid-template-columns 1fr
+
+  grid-gap 4rem

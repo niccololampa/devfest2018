@@ -1,5 +1,5 @@
 const template = (html, self) => function () {
-  const { buy } = self;
+  const { download } = this;
   return html`
     <header class="banner">
       <div class="banner-text">
@@ -17,16 +17,23 @@ const template = (html, self) => function () {
             <path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
           </svg>
         </banner-link>
-        <div class="banner-buttons">
-          <a href="https://www.eventbrite.com/e/devfest-philippines-2018-tickets-49635185175" target="_blank" rel="noopener" class="button-outline" @click="${buy.bind(this)}">
-            <svg class="button-icon" viewBox="0 0 24 24">
-              <path d="M4,4A2,2 0 0,0 2,6V10A2,2 0 0,1 4,12A2,2 0 0,1 2,14V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V14A2,2 0 0,1 20,12A2,2 0 0,1 22,10V6A2,2 0 0,0 20,4H4M4,6H20V8.54C18.76,9.25 18,10.57 18,12C18,13.43 18.76,14.75 20,15.46V18H4V15.46C5.24,14.75 6,13.43 6,12C6,10.57 5.24,9.25 4,8.54V6Z" />
-            </svg>
-            BUY TICKET
-          </a>
+
+        <!-- Download Event Primer Section-->
+        <div class="center white-text">
+
+          <div class="banner-buttons">
+            <div style="margin-bottom: 1rem">Know more about the event:</div>
+            <a href="https://www.eventbrite.com/e/devfest-philippines-2018-tickets-49635185175" @click="${download.bind(this)}" target="_blank" rel="noopener" class="button-outline">
+              DOWNLOAD EVENT PRIMER
+            </a>
+          </div>
         </div>
+        <!-- End of Download Event Primer Section-->
+
       </div>
+
       <div class="banner-gradient-container"></div>
+
       <div class="banner-image-container">
         <lazy-picture
           class="banner-image"
@@ -40,6 +47,18 @@ const template = (html, self) => function () {
         </lazy-picture>
       </div>
     </header>
+
+    <!-- About DevFest Philippines Section-->
+    <about-devfest>
+    </about-devfest>
+    <!-- End of About DevFest Philippines Section-->
+
+    <!-- Stat Section -->
+    <stat-section>
+    </stat-section>
+    <!-- End of Stat Section -->
+
+    <!-- What to Expect Section -->
 
     <section class="section overflow-top card white expect">
       <h1 class="h1">
@@ -111,6 +130,57 @@ const template = (html, self) => function () {
       </speaker-list-loader>
     </speaker-section>
 
+    <!-- Payment Options Section-->
+    <payment-options>
+    </payment-options>
+    <!-- End of Payment Options Section-->
+
+    <!-- Ticket Perks Section-->
+    <section class="section overflow-top card white">
+      <h1 class="h1">Each ticket gives you</h1>
+      <div class="perks">
+
+      <span>
+        <svg style="width:5rem;height:5rem" viewBox="0 0 24 24">
+          <path fill="#36145d" d="M16,21H8A1,1 0 0,1 7,20V12.07L5.7,13.12C5.31,13.5 4.68,13.5 4.29,13.12L1.46,10.29C1.07,9.9 1.07,9.27 1.46,8.88L7.34,3H9C9,4.1 10.34,5 12,5C13.66,5 15,4.1 15,3H16.66L22.54,8.88C22.93,9.27 22.93,9.9 22.54,10.29L19.71,13.12C19.32,13.5 18.69,13.5 18.3,13.12L17,12.07V20A1,1 0 0,1 16,21M20.42,9.58L16.11,5.28C15.8,5.63 15.43,5.94 15,6.2C14.16,6.7 13.13,7 12,7C10.3,7 8.79,6.32 7.89,5.28L3.58,9.58L5,11L8,9H9V19H15V9H16L19,11L20.42,9.58Z" />
+        </svg>
+        <h4>DevFest Shirt</h4>
+      </span>
+
+      <span>
+        <svg style="width:5rem;height:5rem" viewBox="0 0 24 24">
+          <path fill="#36145d" d="M4,3C2.89,3 2,3.89 2,5V15A2,2 0 0,0 4,17H12V22L15,19L18,22V17H20A2,2 0 0,0 22,15V8L22,6V5A2,2 0 0,0 20,3H16V3H4M12,5L15,7L18,5V8.5L21,10L18,11.5V15L15,13L12,15V11.5L9,10L12,8.5V5M4,5H9V7H4V5M4,9H7V11H4V9M4,13H9V15H4V13Z" />
+        </svg>
+        <h4>Certificate of Attendance</h4>
+      </span>
+
+      <span>
+        <svg style="width:5rem;height:5rem" viewBox="0 0 24 24">
+          <path fill="#36145d" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
+        </svg>
+        <h4>Conference Kit</h4>
+      </span>
+
+      <span>
+        <svg style="width:5rem;height:5rem" viewBox="0 0 24 24">
+          <path fill="#36145d" d="M15.5,21L14,8H16.23L15.1,3.46L16.84,3L18.09,8H22L20.5,21H15.5M5,11H10A3,3 0 0,1 13,14H2A3,3 0 0,1 5,11M13,18A3,3 0 0,1 10,21H5A3,3 0 0,1 2,18H13M3,15H8L9.5,16.5L11,15H12A1,1 0 0,1 13,16A1,1 0 0,1 12,17H3A1,1 0 0,1 2,16A1,1 0 0,1 3,15Z" />
+        </svg>
+        <h4>Food and Drinks</h4>
+      </span>
+
+      <span>
+        <svg style="width:5rem;height:5rem" viewBox="0 0 24 24">
+          <path fill="#36145d" d="M17,10.5V7A1,1 0 0,0 16,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16A1,1 0 0,0 17,17V13.5L21,17.5V6.5L17,10.5Z" />
+        </svg>
+        <h4>Access to Video Content</h4>
+      </span>
+      </div>
+    </section>
+    <!-- End of Ticket Perks Section-->
+
+    <!-- Feedback Section -->
+
+
     <section class="section limit-width white center">
       <h1 class="h1 section-title">
         Thank you to our Sponsors
@@ -136,6 +206,7 @@ const template = (html, self) => function () {
         </div>
       </div>
     </section>
+
     <footer-section></footer-section>
   `;
 }.bind(self)();
