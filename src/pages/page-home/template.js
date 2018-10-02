@@ -23,7 +23,7 @@ const template = (html, self) => function () {
 
           <div class="banner-buttons">
             <div style="margin-bottom: 1rem">Know more about the event:</div>
-            <a href="https://www.eventbrite.com/e/devfest-philippines-2018-tickets-49635185175" @click="${download.bind(this)}" target="_blank" rel="noopener" class="button-outline">
+            <a href="https://drive.google.com/file/d/1exCPSR3m8ceTQf8sCsUlYzfkx54ajsos/view" @click="${download.bind(this)}" target="_blank" rel="noopener" class="button-outline">
               DOWNLOAD EVENT PRIMER
             </a>
           </div>
