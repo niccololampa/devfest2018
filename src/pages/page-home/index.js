@@ -25,10 +25,10 @@ class Page extends TemplateLite(HTMLElement) {
     return html`<style>${style.toString()}</style>${template(html, this)}`;
   }
 
-  buy ({ target }) {
+  download ({ target }) {
     if (window.gtag) {
       window.gtag('event', 'click', {
-        'event_category': 'buy_ticket',
+        'event_category': 'download_primer',
         'event_label': target.href,
         'transport_type': 'beacon'
       });
