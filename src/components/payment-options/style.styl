@@ -2,6 +2,9 @@
 @import '../../styles/general/typography.styl'
 @import '../../styles/general/color.styl'
 
+/*Added libraries button -Niccolo Lampa */
+@import '../../styles/components/button.styl'
+
 section
   product-sans()
   padding: 2rem 0rem 8rem
@@ -42,3 +45,8 @@ h1
 a
   color: white
   text-decoration: none
+
+/* overwrite the width of button  - Niccolo Lampa*/
+/*assumed that font-family, font-size, line-height, color are captured by typography */
+.button
+  width 130px
