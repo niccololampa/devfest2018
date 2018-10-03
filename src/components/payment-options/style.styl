@@ -14,7 +14,7 @@ section
   align-items: center
   flex-direction: column
 
-h1
+.h1-special
   product-sans()
   font-weight: 300
   text-align: center
@@ -46,7 +46,9 @@ a
   color: white
   text-decoration: none
 
-/* overwrite the width of button  - Niccolo Lampa*/
-/*assumed that font-family, font-size, line-height, color are captured by typography */
+
+.banner-buttons
+  padding 3rem 0
+
 .button
-  width 130px
+  button-base()
