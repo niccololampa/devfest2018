@@ -12,6 +12,16 @@ class Component extends TemplateLite(HTMLElement) {
   template () {
     return html`<style>${style.toString()}</style>${template(html, this)}`;
   }
+
+  buy ({ target }) {
+    if (window.gtag) {
+      window.gtag('event', 'click', {
+        'event_category': 'buy_ticket',
+        'event_label': target.href,
+        'transport_type': 'beacon'
+      });
+    }
+  }
 }
 
 if (!customElements.get(Component.is)) {
