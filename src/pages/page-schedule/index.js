@@ -2,9 +2,9 @@ import { TemplateLite } from '@littleq/element-lite/template-lite.js';
 import { render, html } from 'lit-html';
 import { template } from './template.js';
 import style from './style.styl';
-import '../../components/speaker-section/index.js';
-import '../../components/speaker-item/index.js';
-import '../../smart-components/speaker-wrapper/index.js';
+import '../../components/schedule-section/index.js';
+import '../../components/schedule-list/index.js';
+import '../../smart-components/schedule-wrapper/index.js';
 import '../../components/footer-section/index.js';
 const { HTMLElement, customElements } = window;
 

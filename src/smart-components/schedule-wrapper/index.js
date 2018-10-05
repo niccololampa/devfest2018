@@ -5,7 +5,7 @@ const { HTMLElement, customElements } = window;
 const summaryList = 'speaker-summary-list';
 
 class Component extends TemplateLite(HTMLElement) {
-  static get is () { return 'speaker-list-loader'; }
+  static get is () { return 'speaker-list-wrapper'; }
 
   template () {
     return '<slot></slot>';

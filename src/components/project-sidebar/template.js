@@ -16,10 +16,10 @@ const template = (html, self) => function () {
         </svg>
         BUY TICKET
       </a>
-      <navigation-loader>
+      <navigation-wrapper>
         <side-navigation @close-sidebar="${close.bind(this)}">
         </side-navigation>
-      </navigation-loader>
+      </navigation-wrapper>
     </aside>
   `;
 }.bind(self)();

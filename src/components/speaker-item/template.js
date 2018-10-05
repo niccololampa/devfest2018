@@ -38,7 +38,7 @@ const template = (html, self) => function () {
           <h1 class="session-h1">
             Sessions
           </h1>
-          <session-summary-loader .sessionId=${session}>
+          <session-summary-wrapper .sessionId=${session}>
             <session-summary-item></session-summary-item>
           </session-summary-item>
         ` : ''}

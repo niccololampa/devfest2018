@@ -1,8 +1,8 @@
 const template = html => html`
   <speaker-section>
-    <speaker-loader>
+    <speaker-wrapper>
       <speaker-item></speaker-item>
-    </speaker-loader>
+    </speaker-wrapper>
   </speaker-section>
 
   <footer-section></footer-section>

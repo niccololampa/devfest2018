@@ -7,7 +7,7 @@ import '../mark-lite/index.js';
 import '../lazy-picture/index.js';
 import '../session-summary-item/index.js';
 import '../../smart-components/storage-url-loader/index.js';
-import '../../smart-components/session-summary-loader/index.js';
+import '../../smart-components/session-summary-wrapper/index.js';
 const { HTMLElement, customElements } = window;
 
 class Component extends TemplateLite(PropertiesLite(HTMLElement)) {

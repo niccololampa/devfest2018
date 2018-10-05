@@ -7,7 +7,11 @@ class Component extends HTMLElement {
   set text (text) {
     this._text = text;
     if (text) {
-      this.innerHTML = marked(text);
+      const frag = document.createRange().createContextualFragment(marked(text));
+      while (this.firstChild) {
+        this.removeChild(this.firstChild);
+      }
+      this.appendChild(frag);
     }
   }
 
