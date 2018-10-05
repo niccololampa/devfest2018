@@ -10,11 +10,11 @@ const template = (html, self) => function () {
       : ''
     }
 
-    <div class="image-container">
+    <div class="speaker-summary-item-image-container">
       ${thumbnail || oldThumbnail
         ? html`
-          <a class="image-anchor" href="/speakers/${$key}">
-            <lazy-picture alt="Picture of ${name}" class="image" thumbnail=${(thumbnail || oldThumbnail)} src=${(img || oldImg)}></lazy-picture>
+          <a class="speaker-summary-item-image-anchor" href="/speakers/${$key}">
+            <lazy-picture alt="Picture of ${name}" class="speaker-summary-item-image" thumbnail=${(thumbnail || oldThumbnail)} src=${(img || oldImg)}></lazy-picture>
           </a>
         `
         : ''

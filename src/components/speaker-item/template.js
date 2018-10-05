@@ -9,12 +9,12 @@ const template = (html, self) => function () {
       `
       : ''
     }
-    <div class="image-section">
-      <div class="image-container">
+    <div class="speaker-item-image-section">
+      <div class="speaker-item-image-container">
         ${thumbnail || oldThumbnail
           ? html`
-            <span class="image-anchor">
-              <lazy-picture alt="Picture of ${name}" class="image" thumbnail=${(thumbnail || oldThumbnail)} src=${(img || oldImg)}></lazy-picture>
+            <span class="speaker-item-image-anchor">
+              <lazy-picture alt="Picture of ${name}" class="speaker-item-image" thumbnail=${(thumbnail || oldThumbnail)} src=${(img || oldImg)}></lazy-picture>
             </span>
           `
           : ''
