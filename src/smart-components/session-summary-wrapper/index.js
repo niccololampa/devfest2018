@@ -1,6 +1,6 @@
 import { TemplateLite } from '@littleq/element-lite/template-lite.js';
 import { ObserversLite } from '@littleq/element-lite/observers-lite.js';
-import { readDatabaseOnce } from '../../utils/firebase';
+import { databaseGet } from '../../utils/firebase';
 import { setItem, getItem } from '../../utils/local-storage';
 const { HTMLElement, customElements } = window;
 
@@ -24,7 +24,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     const el = this.firstElementChild;
     el.session = await getItem(`session-summary-${sessionId}`) || {};
 
-    const session = await readDatabaseOnce('main', {
+    const session = await databaseGet('main', {
       path: `events/devfest2018/sessions/lists/summary/${sessionId}`
     }) || {};
 

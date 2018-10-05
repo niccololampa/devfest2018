@@ -20,18 +20,18 @@ const template = (html, self) => function () {
           : ''
         }
       </div>
-      <h1 class="h1">
+      <h1 class="speaker-item-h1">
         ${name}
       </h1>
-      <p class="affiliation">
+      <p class="speaker-item-affiliation">
         ${affiliation}
       </p>
-      <p class="location">
+      <p class="speaker-item-location">
         ${location}
       </p>
     </div>
-    <div class="bio-section">
-      <mark-lite class="bio" .text=${(bio || 'Gathering data...')}></mark-lite>
+    <div class="speaker-item-bio-section">
+      <mark-lite class="speaker-item-bio" .text=${(bio || 'Gathering data...')}></mark-lite>
 
       ${session
         ? html`

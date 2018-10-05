@@ -1,5 +1,5 @@
 import { TemplateLite } from '@littleq/element-lite/template-lite.js';
-import { readDatabaseOnce } from '../../utils/firebase';
+import { databaseGet } from '../../utils/firebase';
 import { setItem, getItem } from '../../utils/local-storage';
 import { subscribe, unsubscribe } from '../../utils/state';
 const { HTMLElement, customElements } = window;
@@ -29,7 +29,7 @@ class Component extends TemplateLite(HTMLElement) {
   async load ({ sessionId }) {
     const el = this.firstElementChild;
     el.session = await getItem(`session-${sessionId}`) || {};
-    const session = await readDatabaseOnce('main', {
+    const session = await databaseGet('main', {
       path: `events/devfest2018/sessions/data/${sessionId}`
     }) || {};
     el.session = { $key: sessionId, ...session };

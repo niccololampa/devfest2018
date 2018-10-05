@@ -1,4 +1,5 @@
 const template = html => html`
+  <div class="header-space"></div>
   <speaker-section>
     <speaker-wrapper>
       <speaker-item></speaker-item>

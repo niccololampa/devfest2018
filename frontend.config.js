@@ -30,6 +30,7 @@ const fragments = {
   'page-home': 'src/pages/page-home/index.js',
   'page-speakers': 'src/pages/page-speakers/index.js',
   'page-speaker': 'src/pages/page-speaker/index.js',
+  'page-schedule': 'src/pages/page-schedule/index.js',
   'page-session': 'src/pages/page-session/index.js',
   'page-not-found': 'src/pages/page-not-found/index.js'
 };
@@ -42,6 +43,10 @@ const routes = [
   {
     route: '/speakers',
     page: 'page-speakers'
+  },
+  {
+    route: '/schedule',
+    page: 'page-schedule'
   },
   {
     route: '/speakers/:speakerId',

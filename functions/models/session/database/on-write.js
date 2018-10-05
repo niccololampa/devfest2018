@@ -2,8 +2,7 @@ const onWrite = () => (change, context) => {
   const { after } = change;
   const { params } = context;
   const { sessionId } = params;
-  const { title } = after.val();
-  console.log(after.exists());
+  const { title, speaker } = after.val();
   return after
     .ref
     .parent
@@ -11,7 +10,8 @@ const onWrite = () => (change, context) => {
     .child(`lists/summary/${sessionId}`)
     .set(after.exists()
       ? {
-        title: title || null
+        title: title || null,
+        speaker: speaker || null
       }
       : null);
 };

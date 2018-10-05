@@ -1,11 +1,9 @@
-import { TemplateLite } from '@littleq/element-lite/template-lite.js';
 const { HTMLElement, customElements } = window;
 
-class Component extends TemplateLite(HTMLElement) {
+class Component extends HTMLElement {
   static get is () { return 'navigation-wrapper'; }
 
   connectedCallback () {
-    if (super.connectedCallback) super.connectedCallback();
     this._setNavigation([
       {
         label: 'Home',
@@ -14,16 +12,16 @@ class Component extends TemplateLite(HTMLElement) {
       {
         label: 'Speakers',
         href: '/speakers'
+      },
+      {
+        label: 'Schedule',
+        href: '/schedule'
       }
     ]);
   }
 
-  template () {
-    return `<slot></slot>`;
-  }
-
   _setNavigation (navigation) {
-    const navComponent = this.querySelector('header-navigation') || this.querySelector('side-navigation');
+    const navComponent = this.firstElementChild;
     if (navComponent) {
       navComponent.navigation = navigation;
     }
