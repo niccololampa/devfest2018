@@ -1,7 +1,7 @@
 const template = (html, self) => function () {
   const { close, buy } = this;
   return html`
-    <aside class="sidebar" @click="${close.bind(this)}">
+    <aside class="sidebar">
       <h1 class="title">
         <a href="/" @click="${close.bind(this)}">
           <lazy-picture class="logo" src="/assets/images/devfest-logo.png" alt="GDG Devfest 2018 Home">

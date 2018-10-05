@@ -1,0 +1,18 @@
+@import '../../styles/general/color.styl';
+@import '../../styles/general/limit-width.styl';
+@import '../../styles/general/spacing.styl';
+@import '../../styles/general/typography.styl';
+
+:host
+  background $light
+  display block
+  color $dark-violet
+  min-height 50vh
+
+.container
+  margin 0 auto
+  limit-width()
+  padding 0 24px 24px
+
+.title
+  h1-base($dark-violet)

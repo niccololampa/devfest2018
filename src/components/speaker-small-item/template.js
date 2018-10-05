@@ -2,9 +2,9 @@ const template = (html, self) => function () {
   const { speaker } = this;
   const { $key, name } = speaker;
   return html`
-    <div class="bar"></div>
-    <h2 class="h2">
-      <a class="title" href="/speakers/${$key}">
+    <div class="speaker-small-item-bar"></div>
+    <h2 class="speaker-small-item-h2">
+      <a class="speaker-small-item-title" href="/speakers/${$key}">
         ${name}
       </a>
     </h2>

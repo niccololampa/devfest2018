@@ -9,7 +9,7 @@ import '../../components/footer-section/index.js';
 const { HTMLElement, customElements } = window;
 
 class Page extends TemplateLite(HTMLElement) {
-  static get is () { return 'page-speaker'; }
+  static get is () { return 'page-schedule'; }
 
   static get renderer () { return render; }
 

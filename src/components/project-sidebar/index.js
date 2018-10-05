@@ -18,11 +18,13 @@ class Component extends TemplateLite(HTMLElement) {
   open () {
     const sidebar = this.shadowRoot.querySelector('.sidebar');
     sidebar.classList.add('open');
+    this.opened = true;
   }
 
   close () {
     const sidebar = this.shadowRoot.querySelector('.sidebar');
     sidebar.classList.remove('open');
+    this.opened = false;
   }
 
   buy ({ target }) {

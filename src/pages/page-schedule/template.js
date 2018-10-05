@@ -1,4 +1,5 @@
 const template = html => html`
+  <div class="header-space"></div>
   <schedule-section>
     <schedule-wrapper>
       <schedule-list></schedule-list>

@@ -3,7 +3,6 @@ import { PropertiesLite } from '@littleq/element-lite/properties-lite.js';
 import { render, html } from 'lit-html';
 import { template } from './template.js';
 import style from './style.styl';
-import '../../smart-components/storage-url-loader/index.js';
 const { HTMLElement, customElements } = window;
 
 class Component extends TemplateLite(PropertiesLite(HTMLElement)) {

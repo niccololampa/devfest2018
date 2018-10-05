@@ -9,7 +9,7 @@
   @media screen and (max-width: 600px)
     display block
 
-.h1
+.speaker-item-h1
   h1-base($light);
 
 .session-h1
@@ -21,7 +21,7 @@
   text-align center
   background linear-gradient(to top, #36145d 0%,#ba00e0 100%);
 
-.bio-section
+.speaker-item-bio-section
   flex 3
   padding 24px
   background $light
@@ -30,7 +30,7 @@
   flex-flow column
   min-height 300px
 
-.bio
+.speaker-item-bio
   flex 1
 
 .speaker-item-image-container
@@ -50,8 +50,9 @@
   max-width 200px
   max-height 200px
 
-.name, .affiliation, .location
+.speaker-item-name, .speaker-item-affiliation, .speaker-item-location
   margin 6px
+  color $light
 
-.location
+.speaker-item-location
   margin-bottom 24px

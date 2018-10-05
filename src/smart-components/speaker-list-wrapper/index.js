@@ -1,5 +1,5 @@
 import { TemplateLite } from '@littleq/element-lite/template-lite.js';
-import { readDatabaseOnce } from '../../utils/firebase';
+import { databaseGet } from '../../utils/firebase';
 import { setItem, getItem } from '../../utils/local-storage';
 const { HTMLElement, customElements } = window;
 const summaryList = 'speaker-summary-list';
@@ -27,7 +27,7 @@ class Component extends TemplateLite(HTMLElement) {
     el.speakers = await getItem(summaryList) || [];
     el.addEventListener('save-image', this._boundSaveImg);
     el.addEventListener('save-thumbnail', this._boundSaveThumbnail);
-    const data = await readDatabaseOnce('main', {
+    const data = await databaseGet('main', {
       path: 'events/devfest2018/speakers/lists/summary'
     });
     const speakers = [];
