@@ -5,7 +5,7 @@ import { subscribe, unsubscribe } from '../../utils/state';
 const { HTMLElement, customElements } = window;
 
 class Component extends TemplateLite(HTMLElement) {
-  static get is () { return 'session-loader'; }
+  static get is () { return 'speaker-wrapper'; }
 
   template () {
     return '<slot></slot>';
@@ -13,6 +13,8 @@ class Component extends TemplateLite(HTMLElement) {
 
   constructor () {
     super();
+    this._boundSaveImg = this._saveImg.bind(this);
+    this._boundSaveThumbnail = this._saveThumbnail.bind(this);
     this._boundLoad = this.load.bind(this);
   }
 
@@ -26,14 +28,30 @@ class Component extends TemplateLite(HTMLElement) {
     unsubscribe('routeParamObject', this._boundLoad);
   }
 
-  async load ({ sessionId }) {
+  async load ({ speakerId }) {
     const el = this.firstElementChild;
-    el.session = await getItem(`session-${sessionId}`) || {};
-    const session = await readDatabaseOnce('main', {
-      path: `events/devfest2018/sessions/data/${sessionId}`
-    }) || {};
-    el.session = { $key: sessionId, ...session };
-    await setItem(`session-${sessionId}`, session);
+    el.speaker = await getItem(`speaker-${speakerId}`) || [];
+    el.addEventListener('save-image', this._boundSaveImg);
+    el.addEventListener('save-thumbnail', this._boundSaveThumbnail);
+    const speaker = await readDatabaseOnce('main', {
+      path: `events/devfest2018/speakers/data/${speakerId}`
+    });
+    el.speaker = { $key: speakerId, ...speaker };
+    await setItem(`speaker-${speakerId}`, speaker);
+  }
+
+  _saveImg ({ target: el, detail: img }) {
+    if (img) {
+      el.speaker.img = img;
+      setItem(`speaker-${el.speaker.$key}`, el.speaker);
+    }
+  }
+
+  _saveThumbnail ({ target: el, detail: thumbnail }) {
+    if (thumbnail) {
+      el.speaker.thumbnail = thumbnail;
+      setItem(`speaker-${el.speaker.$key}`, el.speaker);
+    }
   }
 }
 

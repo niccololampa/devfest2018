@@ -5,11 +5,11 @@ import { setItem, getItem } from '../../utils/local-storage';
 const { HTMLElement, customElements } = window;
 
 class Component extends TemplateLite(ObserversLite(HTMLElement)) {
-  static get is () { return 'session-summary-loader'; }
+  static get is () { return 'speaker-summary-wrapper'; }
 
   static get properties () {
     return {
-      sessionId: {
+      speakerId: {
         type: String,
         observer: 'load'
       }
@@ -20,16 +20,16 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     return '<slot></slot>';
   }
 
-  async load (sessionId) {
+  async load (speakerId) {
     const el = this.firstElementChild;
-    el.session = await getItem(`session-summary-${sessionId}`) || {};
+    el.speaker = await getItem(`speaker-summary-${speakerId}`) || {};
 
-    const session = await readDatabaseOnce('main', {
-      path: `events/devfest2018/sessions/lists/summary/${sessionId}`
+    const speaker = await readDatabaseOnce('main', {
+      path: `events/devfest2018/speakers/lists/summary/${speakerId}`
     }) || {};
 
-    el.session = { $key: sessionId, ...session };
-    await setItem(`speaker-${sessionId}`, session);
+    el.speaker = { $key: speakerId, ...speaker };
+    await setItem(`speaker-${speakerId}`, speaker);
   }
 }
 

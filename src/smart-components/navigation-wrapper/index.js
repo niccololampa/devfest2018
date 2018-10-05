@@ -2,7 +2,7 @@ import { TemplateLite } from '@littleq/element-lite/template-lite.js';
 const { HTMLElement, customElements } = window;
 
 class Component extends TemplateLite(HTMLElement) {
-  static get is () { return 'navigation-loader'; }
+  static get is () { return 'navigation-wrapper'; }
 
   connectedCallback () {
     if (super.connectedCallback) super.connectedCallback();
