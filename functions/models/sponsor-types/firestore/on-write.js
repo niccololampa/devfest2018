@@ -16,8 +16,14 @@ const onWrite = admin => (change, context) => {
     updates[`${path}/data/${typeId}`] = {
       name: document.name || ''
     };
+
+    if (document.order !== null && document.order !== undefined) {
+      updates[`${path}/data/${typeId}`].order = document.order;
+      updates[`${path}/lists/types/${typeId}`] = document.order;
+    }
   } else { // onDelete
     updates[`${path}/data/${typeId}`] = null;
+    updates[`${path}/lists/types/${typeId}`] = null;
     updates[`events/${eventId}/sponsors/lists/types/${typeId}`] = null;
   }
 

@@ -11,8 +11,11 @@ import '../../components/about-devfest/index.js';
 import '../../components/stat-section/index.js';
 import '../../components/stat-item/index.js';
 import '../../components/payment-options/index.js';
-import '../../components/feedback-section/index.js';
-import '../../components/feedback-item/index.js';
+import '../../components/sponsor-section/index.js';
+import '../../smart-components/sponsor-type-list-wrapper/index.js';
+import '../../components/sponsor-type-list/index.js';
+// import '../../components/feedback-section/index.js';
+// import '../../components/feedback-item/index.js';
 import '../../components/footer-section/index.js';
 const { HTMLElement, customElements } = window;
 
