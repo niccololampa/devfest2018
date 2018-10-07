@@ -29,7 +29,6 @@ class Component extends HTMLElement {
       el.sponsors = sponsors;
       await setItem(`${localForageName}-${typeId}`, sponsors);
     }
-
   }
 }
 
