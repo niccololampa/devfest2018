@@ -6,7 +6,7 @@ import style from './style.styl';
 import '../mark-lite/index.js';
 import '../speaker-small-item/index.js';
 import '../../smart-components/storage-url-loader/index.js';
-import '../../smart-components/speaker-summary-loader/index.js';
+import '../../smart-components/speaker-summary-wrapper/index.js';
 const { HTMLElement, customElements } = window;
 
 class Component extends TemplateLite(PropertiesLite(HTMLElement)) {

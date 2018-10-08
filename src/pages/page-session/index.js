@@ -4,7 +4,7 @@ import { template } from './template.js';
 import style from './style.styl';
 import '../../components/session-section/index.js';
 import '../../components/session-item/index.js';
-import '../../smart-components/session-loader/index.js';
+import '../../smart-components/session-wrapper/index.js';
 import '../../components/footer-section/index.js';
 const { HTMLElement, customElements } = window;
 

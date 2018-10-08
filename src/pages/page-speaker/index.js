@@ -4,7 +4,7 @@ import { template } from './template.js';
 import style from './style.styl';
 import '../../components/speaker-section/index.js';
 import '../../components/speaker-item/index.js';
-import '../../smart-components/speaker-loader/index.js';
+import '../../smart-components/speaker-wrapper/index.js';
 import '../../components/footer-section/index.js';
 const { HTMLElement, customElements } = window;
 

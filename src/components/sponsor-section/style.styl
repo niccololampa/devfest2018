@@ -1,0 +1,23 @@
+@import '../../styles/general/color.styl';
+@import '../../styles/general/limit-width.styl';
+@import '../../styles/general/spacing.styl';
+@import '../../styles/general/typography.styl';
+
+:host
+  display block
+  background $light
+  text-align center
+  padding 0.5rem 1.5rem 3rem
+
+.h1
+  h1-base($dark)
+
+.section-title
+  font-size 3rem
+
+.tiny-limit-width
+  margin 0 auto
+  tiny-limit-width()
+
+.paragraph
+  body-base($dark)

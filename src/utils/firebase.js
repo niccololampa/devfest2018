@@ -23,7 +23,7 @@ const getFirebase = async () => {
   return { firebase, firestore, storage };
 };
 
-const readDatabaseOnce = async (dbName, query) => {
+const databaseGet = async (dbName, query) => {
   const { path, filters } = query;
   if (firebase) {
     let ref = firebase.database().ref(path);
@@ -71,4 +71,4 @@ getFirebase().then(result => {
   updateState('firebase-ready', true);
 });
 
-export { readDatabaseOnce, firebase, firestore, storage, readStorageURL };
+export { databaseGet, firebase, firestore, storage, readStorageURL };

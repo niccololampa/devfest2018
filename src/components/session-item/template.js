@@ -10,7 +10,7 @@ const template = (html, self) => function () {
     <h1 class="h1">
       Speaker
     </h1>
-    <speaker-summary-loader .speakerId=${speaker}>
+    <speaker-summary-wrapper .speakerId=${speaker}>
       <speaker-small-item></speaker-small-item>
     </speaker-summary-item>
   `;

@@ -1,8 +1,9 @@
 const template = html => html`
+  <div class="header-space"></div>
   <session-section>
-    <session-loader>
+    <session-wrapper>
       <session-item></session-item>
-    </session-loader>
+    </session-wrapper>
   </session-section>
 
   <footer-section></footer-section>

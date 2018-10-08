@@ -9,19 +9,19 @@
   @media screen and (max-width: 600px)
     display block
 
-.h1
+.speaker-item-h1
   h1-base($light);
 
 .session-h1
   h1-base($dark);
 
-.image-section
+.speaker-item-image-section
   flex 1
   padding 24px
   text-align center
   background linear-gradient(to top, #36145d 0%,#ba00e0 100%);
 
-.bio-section
+.speaker-item-bio-section
   flex 3
   padding 24px
   background $light
@@ -30,28 +30,29 @@
   flex-flow column
   min-height 300px
 
-.bio
+.speaker-item-bio
   flex 1
 
-.image-container
+.speaker-item-image-container
   min-height 200px
   margin-bottom 24px
 
-.image-anchor
+.speaker-item-image-anchor
   border-radius 50%
   min-height 190px
   min-width 190px
   display inline-block
 
-.image
+.speaker-item-image
   --border-radius 50%
   border-radius 50%
   background $light
   max-width 200px
   max-height 200px
 
-.name, .affiliation, .location
+.speaker-item-name, .speaker-item-affiliation, .speaker-item-location
   margin 6px
+  color $light
 
-.location
+.speaker-item-location
   margin-bottom 24px

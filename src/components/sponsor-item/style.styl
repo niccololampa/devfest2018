@@ -1,0 +1,42 @@
+@import '../../styles/general/layout.styl';
+@import '../../styles/general/spacing.styl';
+@import '../../styles/general/color.styl';
+@import '../../styles/general/typography.styl';
+
+:host
+  display inline-block
+  text-align center
+  vertical-align middle
+  margin 12px
+
+.sponsor-item-image-anchor
+  display inline-block
+
+.sponsor-item-image
+  width 200px
+  display inline-block
+
+.powered-by
+  width 400px
+
+  @media screen and (max-width: 450px)
+    width 300px
+
+  @media screen and (max-width: 400px)
+    width 250px
+
+.official-event-partner, .official-party-partner, .official-media-partner
+  width 300px
+
+  @media screen and (max-width: 450px)
+    width 250px
+
+  @media screen and (max-width: 400px)
+    width 200px
+
+.special-thanks
+  @media screen and (max-width: 450px)
+    width 150px
+
+  @media screen and (max-width: 400px)
+    width 125px

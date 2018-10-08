@@ -17,8 +17,8 @@ class Component extends TemplateLite(HTMLElement) {
     this._thumbnailElement = document.createElement('img');
     this._src = '';
     this._imageElement = document.createElement('img');
-    this._thumbnailElement.classList.add('thumbnail');
-    this._imageElement.classList.add('image');
+    this._thumbnailElement.classList.add('lazy-picture-thumbnail');
+    this._imageElement.classList.add('lazy-picture-image');
     this._imageElement.addEventListener('load', this._boundImageLoaded);
   }
 
@@ -148,8 +148,8 @@ class Component extends TemplateLite(HTMLElement) {
   _imageLoaded () {
     const event = new Event('load');
     event.detail = { originalTarget: this._img };
-    this._thumbnailElement.classList.add('image-loaded');
-    this._imageElement.classList.add('image-loaded');
+    this._thumbnailElement.classList.add('lazy-picture-image-loaded');
+    this._imageElement.classList.add('lazy-picture-image-loaded');
     this.dispatchEvent(event);
   }
 

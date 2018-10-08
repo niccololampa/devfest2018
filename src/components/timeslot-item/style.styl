@@ -1,0 +1,23 @@
+@import '../../styles/general/layout.styl';
+@import '../../styles/general/spacing.styl';
+@import '../../styles/general/color.styl';
+@import '../../styles/general/typography.styl';
+
+:host
+  display flex
+  align-items stretch
+  @media screen and (max-width: 600px)
+    display block
+  margin-bottom 24px
+
+.timeslot-item-h3
+  h3-base($dark-violet);
+  margin 12px 0 0;
+  text-align right
+
+.timeslot-item-time-schedule
+  width 100px
+
+.timeslot-item-session-schedule
+  flex 1
+  margin-left: 24px

@@ -2,24 +2,24 @@
   display inline-block
   position relative
 
-.thumbnail
+.lazy-picture-thumbnail
   position absolute
   width 100%
   opacity 1
   border-radius var(--border-radius, 0)
 
-  &.image-loaded
+  &.lazy-picture-image-loaded
     opacity 0
 
-.image
+.lazy-picture-image
   width 100%
   opacity 0
   border-radius var(--border-radius, 0)
 
-  &.image-loaded
+  &.lazy-picture-image-loaded
     opacity 1
 
-.thumbnail, .image
+.lazy-picture-thumbnail, .lazy-picture-image
   transition opacity 1s
   &:not([src])
     opacity 0

@@ -2,7 +2,7 @@ import { TemplateLite } from '@littleq/element-lite/template-lite.js';
 import { render, html } from 'lit-html';
 import { template } from './template.js';
 import style from './style.styl';
-import '../../smart-components/navigation-loader/index.js';
+import '../../smart-components/navigation-wrapper/index.js';
 import '../../components/side-navigation/index.js';
 const { HTMLElement, customElements } = window;
 
@@ -18,11 +18,13 @@ class Component extends TemplateLite(HTMLElement) {
   open () {
     const sidebar = this.shadowRoot.querySelector('.sidebar');
     sidebar.classList.add('open');
+    this.opened = true;
   }
 
   close () {
     const sidebar = this.shadowRoot.querySelector('.sidebar');
     sidebar.classList.remove('open');
+    this.opened = false;
   }
 
   buy ({ target }) {

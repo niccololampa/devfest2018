@@ -9,36 +9,36 @@ const template = (html, self) => function () {
       `
       : ''
     }
-    <div class="image-section">
-      <div class="image-container">
+    <div class="speaker-item-image-section">
+      <div class="speaker-item-image-container">
         ${thumbnail || oldThumbnail
           ? html`
-            <span class="image-anchor">
-              <lazy-picture alt="Picture of ${name}" class="image" thumbnail=${(thumbnail || oldThumbnail)} src=${(img || oldImg)}></lazy-picture>
+            <span class="speaker-item-image-anchor">
+              <lazy-picture alt="Picture of ${name}" class="speaker-item-image" thumbnail=${(thumbnail || oldThumbnail)} src=${(img || oldImg)}></lazy-picture>
             </span>
           `
           : ''
         }
       </div>
-      <h1 class="h1">
+      <h1 class="speaker-item-h1">
         ${name}
       </h1>
-      <p class="affiliation">
+      <p class="speaker-item-affiliation">
         ${affiliation}
       </p>
-      <p class="location">
+      <p class="speaker-item-location">
         ${location}
       </p>
     </div>
-    <div class="bio-section">
-      <mark-lite class="bio" .text=${(bio || 'Gathering data...')}></mark-lite>
+    <div class="speaker-item-bio-section">
+      <mark-lite class="speaker-item-bio" .text=${(bio || 'Gathering data...')}></mark-lite>
 
       ${session
         ? html`
           <h1 class="session-h1">
             Sessions
           </h1>
-          <session-summary-loader .sessionId=${session}>
+          <session-summary-wrapper .sessionId=${session}>
             <session-summary-item></session-summary-item>
           </session-summary-item>
         ` : ''}

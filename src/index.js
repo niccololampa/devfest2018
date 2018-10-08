@@ -54,3 +54,11 @@ if (window.SnackerMessages && window.SnackerMessages.length) {
     snacker.show();
   }
 }
+
+window.addEventListener('click', event => {
+  const sidebar = document.querySelector('project-sidebar');
+    // sidebar.close();
+  if (event.target !== sidebar && sidebar.opened) {
+    sidebar.close();
+  }
+});

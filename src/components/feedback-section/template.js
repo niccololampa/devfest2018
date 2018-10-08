@@ -1,7 +1,7 @@
 const template = (html) => html`
 
   <section class="section">
-    <h1>Feedback</h1>
+    <h1 class="h1-special">Feedback</h1>
     <div class="grid">
       <slot>
 
@@ -12,4 +12,3 @@ const template = (html) => html`
 `;
 
 export { template };
-

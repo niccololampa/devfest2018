@@ -10,19 +10,19 @@ const template = (html, self) => function () {
       : ''
     }
 
-    <div class="image-container">
+    <div class="speaker-summary-item-image-container">
       ${thumbnail || oldThumbnail
         ? html`
-          <a class="image-anchor" href="/speakers/${$key}">
-            <lazy-picture alt="Picture of ${name}" class="image" thumbnail=${(thumbnail || oldThumbnail)} src=${(img || oldImg)}></lazy-picture>
+          <a class="speaker-summary-item-image-anchor" href="/speakers/${$key}">
+            <lazy-picture alt="Picture of ${name}" class="speaker-summary-item-image" thumbnail=${(thumbnail || oldThumbnail)} src=${(img || oldImg)}></lazy-picture>
           </a>
         `
         : ''
       }
     </div>
-    <p class="name">${name}</p>
-    <p class="affiliation">${affiliation}</p>
-    <p class="location">${location}</p>
+    <p class="speaker-summary-item-name">${name}</p>
+    <p class="speaker-summary-item-affiliation">${affiliation}</p>
+    <p class="speaker-summary-item-location">${location}</p>
     <a class="button-outline" href="/speakers/${$key}">View Profile</a>
   `;
 }.bind(self)();

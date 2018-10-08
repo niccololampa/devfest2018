@@ -1,21 +1,28 @@
 @import '../../styles/components/button.styl'
 @import '../../styles/general/color.styl'
+@import '../../styles/general/spacing.styl'
 
 :host
   text-align center
-  padding-top 24px;
+  padding 24px 0;
+  display inline-block
+  min-width 238px
+  max-width 250px
+  margin-bottom $small
+  box-sizing border-box
+  vertical-align top
 
-.image-container
+.speaker-summary-item-image-container
   min-height 200px
   margin-bottom 24px
 
-.image-anchor
+.speaker-summary-item-image-anchor
   border-radius 50%
   min-height 190px
   min-width 190px
   display inline-block
 
-.image
+.speaker-summary-item-image
   --border-radius 50%
   border-radius 50%
   background $light
@@ -25,8 +32,8 @@
 .button-outline
   button-outline-base()
 
-.name, .affiliation, .location
+.speaker-summary-item-name, .speaker-summary-item-affiliation, .speaker-summary-item-location
   margin 6px
 
-.location
+.speaker-summary-item-location
   margin-bottom 24px

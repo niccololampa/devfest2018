@@ -30,7 +30,12 @@ const fragments = {
   'page-home': 'src/pages/page-home/index.js',
   'page-speakers': 'src/pages/page-speakers/index.js',
   'page-speaker': 'src/pages/page-speaker/index.js',
+  'page-schedule': 'src/pages/page-schedule/index.js',
   'page-session': 'src/pages/page-session/index.js',
+  'page-codelabs': 'src/pages/page-codelabs/index.js',
+  'page-codelab': 'src/pages/page-codelab/index.js',
+  'page-login': 'src/pages/page-login/index.js',
+  'page-profile': 'src/pages/page-profile/index.js',
   'page-not-found': 'src/pages/page-not-found/index.js'
 };
 
@@ -44,12 +49,32 @@ const routes = [
     page: 'page-speakers'
   },
   {
+    route: '/schedule',
+    page: 'page-schedule'
+  },
+  {
+    route: '/login',
+    page: 'page-login'
+  },
+  {
+    route: '/profile',
+    page: 'page-profile'
+  },
+  {
     route: '/speakers/:speakerId',
     page: 'page-speaker'
   },
   {
     route: '/session/:sessionId',
     page: 'page-session'
+  },
+  {
+    route: '/codelabs',
+    page: 'page-codelabs'
+  },
+  {
+    route: '/codelabs/:codelabId',
+    page: 'page-codelab'
   },
   {
     route: 'no-page',
